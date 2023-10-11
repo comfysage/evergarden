@@ -269,6 +269,13 @@ function M.setup(theme, config)
 
   hl_groups['@lsp.type.macro.rust'] = { theme.syntax.macro }
 
+  hl_groups['markdownH1'] = { theme.seiun }
+  hl_groups['markdownH2'] = { theme.taiyo }
+  hl_groups['markdownH3'] = { theme.shinme }
+  hl_groups['markdownH4'] = { link = "markdownH1" }
+  hl_groups['markdownH5'] = { link = "markdownH2" }
+  hl_groups['markdownH6'] = { link = "markdownH3" }
+
   -- Telescope
   hl_groups['TelescopeMatching']       = { link = "Search" }
   hl_groups['TelescopeSelection']      = { link = "Identifier" }
