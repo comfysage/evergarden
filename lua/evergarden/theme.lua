@@ -90,7 +90,7 @@ function M.setup(colors, config)
     call = theme.shinme,
     string = theme.shinme,
     macro = theme.sukai,
-    annotation = theme.sakaeru,
+    annotation = theme.sakura,
   }
 
   theme.style = {
