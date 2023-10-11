@@ -4,6 +4,7 @@
 ---@class EvergardenTheme
 ---@field none Color
 ---@field colors EvergardenColors
+---@field base { fg: Color, bg: Color }
 ---@field bg Color
 ---@field fg Color
 ---@field bg0 Color
@@ -57,6 +58,7 @@ function M.setup(colors, config)
       theme.bg = colors.bg0_soft
     end
   end
+  theme.base    = { fg = colors.bg0, bg = theme.bg }
   theme.fg      = colors.fg
 
   theme.bg0     = colors.bg0

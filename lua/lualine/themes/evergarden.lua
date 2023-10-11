@@ -7,7 +7,10 @@ local colors = {
 
   fg0 = theme.fg0[1],
   fg1 = theme.fg1[1],
-  bg0 = theme.bg[1],
+  base = {
+    fg = theme.base.fg[1],
+    bg = theme.base.bg[1],
+  },
   bg1 = theme.bg1[1],
   bg2 = theme.bg2[1],
 }
@@ -15,29 +18,29 @@ local colors = {
 local evergarden = {}
 
 evergarden.normal = {
-  a = { fg = colors.bg0, bg = colors.normal },
+  a = { fg = colors.base.fg, bg = colors.normal },
   b = { bg = colors.bg1, fg = colors.normal },
-  c = { bg = colors.bg0, fg = colors.fg0 },
+  c = { bg = colors.base.fg, fg = colors.fg0 },
 }
 
 evergarden.insert = {
-  a = { fg = colors.bg0, bg = colors.insert },
+  a = { fg = colors.base.fg, bg = colors.insert },
   b = { bg = colors.bg1, fg = colors.insert },
 }
 
 evergarden.command = evergarden.normal
 
 evergarden.visual = {
-  a = { fg = colors.bg0, bg = colors.visual },
+  a = { fg = colors.base.fg, bg = colors.visual },
   b = { bg = colors.bg1, fg = colors.visual },
 }
 
 evergarden.replace = evergarden.insert
 
 evergarden.inactive = {
-  a = { bg = colors.bg0, fg = colors.fg1 },
-  b = { bg = colors.bg0, fg = colors.fg1 },
-  c = { bg = colors.bg0, fg = colors.fg1 },
+  a = { bg = colors.base.bg, fg = colors.fg1 },
+  b = { bg = colors.base.bg, fg = colors.fg1 },
+  c = { bg = colors.base.bg, fg = colors.fg1 },
 }
 
 return evergarden
