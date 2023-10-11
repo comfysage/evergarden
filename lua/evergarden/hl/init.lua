@@ -31,7 +31,7 @@ function M.setup(theme, config)
     CursorLineNr = { theme.comment },
     SignColumn = { theme.none, theme.bg },
     VertSplit = { theme.bg2 },
-    TabLineSel = { theme.bg, theme.shinme },
+    TabLineSel = { theme.base.fg, theme.shinme },
     TabLine = { theme.comment, theme.bg },
     TabLineFill = { link = 'TabLine' },
     Title = { theme.comment },
@@ -49,7 +49,7 @@ function M.setup(theme, config)
 
     ColorColumn = { theme.none, theme.bg1 },
 
-    Todo = { theme.bg, theme.seiun },
+    Todo = { theme.base.fg, theme.seiun },
 
     PreProc = { theme.syntax.annotation },
     Include = { theme.syntax.annotation },
