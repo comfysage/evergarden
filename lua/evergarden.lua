@@ -31,13 +31,15 @@ end
 ---@param colors ColorSpec
 local function set_hi(group, colors)
     if not vim.tbl_isempty(colors) then
-        colors.fg = colors[1] and colors[1][1] or 'NONE'
-        colors.bg = colors[2] and colors[2][1] or 'NONE'
-        colors.ctermfg = colors[1] and colors[1][2] or 'NONE'
-        colors.ctermbg = colors[2] and colors[2][2] or 'NONE'
-        colors[1] = nil
-        colors[2] = nil
-        vim.api.nvim_set_hl(0, group, colors)
+        ---@type vim.api.keyset.highlight
+        local color = colors
+        color.fg = colors[1] and colors[1][1] or 'NONE'
+        color.bg = colors[2] and colors[2][1] or 'NONE'
+        color.ctermfg = colors[1] and colors[1][2] or 'NONE'
+        color.ctermbg = colors[2] and colors[2][2] or 'NONE'
+        color[1] = nil
+        color[2] = nil
+        vim.api.nvim_set_hl(0, group, color)
     end
 end
 
