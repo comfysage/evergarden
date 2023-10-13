@@ -26,7 +26,7 @@
 ---@field seiun   Color
 ---@field ike     Color
 ---@field syntax EvergardenSyntax
----@field style { [styleField]: styleValue }
+---@field style StyleConfig
 ---@field comment Color
 
 ---@class EvergardenSyntax
