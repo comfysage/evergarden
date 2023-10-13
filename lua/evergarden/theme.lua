@@ -1,4 +1,5 @@
 ---@class StyleConfig
+---@field tabline { reverse: boolean, color: EvergardenColor }
 ---@field search { reverse: boolean, inc_reverse: boolean }
 ---@field types { italic: boolean }
 ---@field keyword { italic: boolean }
