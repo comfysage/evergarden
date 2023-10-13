@@ -10,8 +10,9 @@ function M.setup(theme, config)
   local hl_groups = {
     Normal = { theme.fg, theme.bg },
     Statement = { theme.syntax.keyword },
+    Keyword = { theme.syntax.keyword, italic = config.style.keyword.italic },
     Identifier = { theme.syntax.object },
-    Type = { theme.syntax.type },
+    Type = { theme.syntax.type, italic = config.style.types.italic },
     Function = { theme.syntax.call },
     Structure = { theme.syntax.type },
 

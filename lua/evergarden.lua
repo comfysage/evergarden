@@ -14,6 +14,8 @@ evergarden.default_config = {
     override_terminal = true,
     style = {
         search = { reverse = false, inc_reverse = true },
+        types = { italic = true },
+        keyword = { italic = true },
     },
     overrides = {},
 }
