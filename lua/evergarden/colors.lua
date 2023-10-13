@@ -1,6 +1,6 @@
 ---@class Color { [1]: string, [2]: number }
 
----@alias EvergardenColor 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'purple'|'grey0'|'grey1'|'grey2'|'statusline1'|'statusline2'|'statusline3'
+---@alias EvergardenColor 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'purple'|'grey0'|'grey1'|'grey2'
 ---@alias EvergardenColors { [EvergardenColor]: Color }
 
 ---@type EvergardenColors
@@ -24,9 +24,6 @@ _G.evergarden_colors = {
   grey0       = { "#7A8478", 8 },
   grey1       = { "#859289", 15 },
   grey2       = { "#9DA9A0", 8 },
-  statusline1 = { "#A7C080", 2 },
-  statusline2 = { "#D3C6AA", 7 },
-  statusline3 = { "#E67E80", 1 },
 }
 
 local M = {}
