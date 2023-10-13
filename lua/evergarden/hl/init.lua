@@ -39,7 +39,8 @@ function M.setup(theme, config)
     Folded = { theme.comment },
     FoldColumn = { theme.bg1 },
 
-    Search = { theme.taiyo },
+    Search = { theme.taiyo, reverse = config.style.search.reverse },
+    IncSearch = { theme.taiyo, reverse = config.style.search.inc_reverse },
 
     Error = { theme.sakura },
     ErrorMsg = { link = "Error" },

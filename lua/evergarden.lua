@@ -4,7 +4,7 @@ local evergarden = {}
 ---@field transparent_background boolean
 ---@field contrast_dark 'hard'|'medium'|'soft'
 ---@field override_terminal boolean
----@field style { [styleField]: styleValue }
+---@field style StyleConfig
 ---@field overrides HLGroups
 
 ---@type EvergardenConfig
@@ -13,12 +13,12 @@ evergarden.default_config = {
     contrast_dark = 'medium',
     override_terminal = true,
     style = {
-        search = { reverse = true },
+        search = { reverse = false, inc_reverse = true },
     },
     overrides = {},
 }
 
-_G.evergarden_config = _G.evergarden_config or evergarden.default_config
+_G.evergarden_config = vim.tbl_deep_extend("force", evergarden.default_config, _G.evergarden_config)
 
 function evergarden.setup(config)
     _G.evergarden_config = vim.tbl_deep_extend("force", _G.evergarden_config, config or {})

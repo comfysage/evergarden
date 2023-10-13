@@ -1,5 +1,5 @@
----@alias styleField 'search'
----@alias styleValue { reverse: boolean }
+---@class StyleConfig
+---@field search { reverse: boolean, inc_reverse: boolean }
 
 ---@class EvergardenTheme
 ---@field none Color
