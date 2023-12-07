@@ -273,6 +273,10 @@ function M.setup(theme, config)
 
   hl_groups['@lsp.type.macro.rust'] = { theme.syntax.macro }
 
+  -- fix lsp hover doc
+  hl_groups['@none.markdown'] = { theme.none, theme.none }
+  hl_groups['@text.emphasis'] = { theme.taiyo, italic = true }
+
   hl_groups['markdownH1'] = { theme.seiun }
   hl_groups['markdownH2'] = { theme.taiyo }
   hl_groups['markdownH3'] = { theme.shinme }
