@@ -302,6 +302,40 @@ function M.setup(theme, config)
   hl_groups['GitGutterDelete'] = { link = "DiffDelete" }
   hl_groups['GitGutterChangeDelete'] = { link = 'GitGutterChange' }
 
+  -- Cmp
+  hl_groups['CmpItemMenu'] = { theme.syntax.constant, italic = true }
+
+  hl_groups['CmpItemKindText']  = { theme.fg1 }
+  hl_groups['CmpItemKindMethod']  = { theme.syntax.constant }
+  hl_groups['CmpItemKindFunction']  = { theme.syntax.call }
+  hl_groups['CmpItemKindConstructor']  = { theme.syntax.type }
+  hl_groups['CmpItemKindField']  = { theme.syntax.object }
+  hl_groups['CmpItemKindVariable']  = { theme.syntax.object }
+  hl_groups['CmpItemKindClass']  = { theme.syntax.type }
+  hl_groups['CmpItemKindInterface']  = { theme.syntax.type }
+  hl_groups['CmpItemKindModule']  = { theme.syntax.keyword }
+  hl_groups['CmpItemKindProperty']  = { theme.syntax.keyword }
+  hl_groups['CmpItemKindUnit']  = { theme.syntax.constant }
+  hl_groups['CmpItemKindValue']  = { theme.syntax.constant }
+  hl_groups['CmpItemKindEnum']  = { theme.syntax.constant }
+  hl_groups['CmpItemKindKeyword']  = { theme.syntax.keyword }
+  hl_groups['CmpItemKindSnippet']  = { theme.syntax.macro }
+  hl_groups['CmpItemKindColor']  = { theme.syntax.constant }
+  hl_groups['CmpItemKindFile']  = { theme.syntax.type }
+  hl_groups['CmpItemKindReference']  = { theme.fg1 }
+  hl_groups['CmpItemKindFolder']  = { theme.syntax.type }
+  hl_groups['CmpItemKindEnumMember']  = { theme.syntax.constant }
+  hl_groups['CmpItemKindConstant']  = { theme.syntax.constant }
+  hl_groups['CmpItemKindStruct']  = { theme.syntax.type }
+  hl_groups['CmpItemKindEvent']  = { theme.syntax.keyword }
+  hl_groups['CmpItemKindOperator']  = { link = "Operator" }
+  hl_groups['CmpItemKindTypeParameter']  = { theme.syntax.type }
+
+  hl_groups['CmpItemAbbrDeprecated'] = { link = "Comment" }
+
+  hl_groups['CmpItemAbbrMatch']      = { link = "Search" }
+  hl_groups['CmpItemAbbrMatchFuzzy'] = { link = "CmpItemAbbrMatch" }
+
   hl_groups['IndentBlanklineIndent1'] = { theme.bg2, nocombine = true }
   hl_groups['IndentBlanklineIndent2'] = { theme.colors.red, nocombine = true }
   hl_groups['IndentBlanklineIndent3'] = { theme.bg2, nocombine = true }
