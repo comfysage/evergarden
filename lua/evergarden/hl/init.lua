@@ -16,7 +16,7 @@ function M.setup(theme, config)
     Function = { theme.syntax.call },
     Structure = { theme.syntax.type },
 
-    Comment = { theme.comment },
+    Comment = { theme.comment, italic = config.style.comment.italic },
 
     Special = { theme.syntax.context },
     Delimiter = { theme.syntax.context },

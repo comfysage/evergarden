@@ -3,6 +3,7 @@
 ---@field search { reverse: boolean, inc_reverse: boolean }
 ---@field types { italic: boolean }
 ---@field keyword { italic: boolean }
+---@field comment { italic: boolean }
 
 ---@class EvergardenTheme
 ---@field none Color
