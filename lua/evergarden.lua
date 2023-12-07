@@ -22,8 +22,10 @@ evergarden.default_config = {
     overrides = {},
 }
 
+---@type EvergardenConfig
 _G.evergarden_config = vim.tbl_deep_extend("force", evergarden.default_config, _G.evergarden_config or {})
 
+---@param config EvergardenConfig|table
 function evergarden.setup(config)
     _G.evergarden_config = vim.tbl_deep_extend("force", _G.evergarden_config, config or {})
 end
