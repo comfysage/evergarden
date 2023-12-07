@@ -4,6 +4,8 @@ evergarden is a cozy neovim colorscheme for cozy morning coding.
 
 evergarden is inspired by the [everforest colorscheme](https://github.com/sainnhe/everforest).
 
+evergarden was designed as a cozy theme with a focus on readability and visual comfort.
+
 ## Installation
 
 using [lazy.nvim](https://github.com/folke/lazy.nvim):
