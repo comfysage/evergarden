@@ -57,7 +57,7 @@ function M.setup(theme, config)
     PreProc = { theme.syntax.annotation },
     Include = { theme.syntax.annotation },
 
-    Directory = { link = "Constant" },
+    Directory = { theme.colors.grey1 },
 
     Underlined = { theme.none, theme.none },
 
