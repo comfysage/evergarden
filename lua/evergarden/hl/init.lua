@@ -151,6 +151,7 @@ function M.setup(theme, config)
     DiagnosticWarn                       = { link = "AdachiYellowDark" },
     DiagnosticInfo                       = { link = "AdachiAquaDark" }, ]]
     -- DiagnosticHint                       = { link = "AdachiAquaDark" },
+    DiagnosticOk = { theme.shinme },
     DiagnosticError = { theme.sakura },
     DiagnosticWarn = { theme.sakaeru },
     DiagnosticInfo = { theme.sage },
