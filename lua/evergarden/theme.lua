@@ -92,7 +92,7 @@ function M.setup(colors, config)
     constant = theme.seiun,
     call = theme.shinme,
     string = theme.shinme,
-    macro = theme.sukai,
+    macro = theme.taiyo,
     annotation = theme.sakura,
   }
 
