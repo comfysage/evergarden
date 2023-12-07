@@ -48,7 +48,7 @@ require 'evergarden'.setup {
 Overrides can take all options passed to `vim.api.nvim_set_hl()`.
 
 ```lua
-require 'aurora'.setup {
+require 'evergarden'.setup {
     overrides = {
         'Normal' = { '#fddce3', '#1d2021' } -- { 'fg', 'bg', bold = bool, italic = bool, ... }
     },
