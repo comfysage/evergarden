@@ -83,7 +83,7 @@ function M.setup(theme, config)
     TSField              = { theme.syntax.object },
     TSFloat              = { link = "Float" },
     TSFuncBuiltin        = { link = "Constant" },
-    TSFuncMacro          = { link = "Constant" },
+    TSFuncMacro          = { theme.syntax.macro },
     TSFunction           = { link = "Function" },
     TSInclude            = { link = "Include" },
     TSKeyword            = { link = "Keyword" },
