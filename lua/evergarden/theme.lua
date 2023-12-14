@@ -28,6 +28,7 @@
 ---@field ike     Color
 ---@field syntax EvergardenSyntax
 ---@field diagnostic { ['ok'|'error'|'warn'|'info'|'hint']: Color }
+---@field diff { ['add'|'delete'|'change']: Color }
 ---@field style StyleConfig
 ---@field sign Color
 ---@field comment Color
@@ -108,6 +109,11 @@ function M.setup(colors, config)
     warn = theme.sakaeru,
     info = theme.sage,
     hint = theme.sukai,
+  }
+  theme.diff = {
+    add = theme.shinme,
+    delete = theme.sakura,
+    change = theme.sage,
   }
 
   theme.style = {
