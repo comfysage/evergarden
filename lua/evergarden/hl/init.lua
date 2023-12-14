@@ -206,7 +206,7 @@ function M.setup(theme, config)
     LspCodeLensSeparator                 = { link = "VirtualTextHint" },
     LspSignatureActiveParameter          = { link = "Search" },
     healthError                          = { link = "DiagnosticError" },
-    healthSuccess                        = { link = "AdachiGreenDark" },
+    healthSuccess                        = { link = "DiagnosticOk" },
     healthWarning                        = { link = "DiagnosticWarn" },
   }
 
