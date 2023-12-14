@@ -27,7 +27,9 @@ function M.setup(theme, config)
     String = { theme.syntax.string },
 
     Cursor = { theme.sakaeru },
-    CursorLine = { theme.none, theme.bg1 },
+    CursorLine   = { theme.none, theme.bg1 },
+    CursorColumn = { theme.none, theme.bg1 },
+    QuickFixLine = { theme.none, theme.bg1 },
 
     LineNr = { theme.bg2 },
     CursorLineNr = { theme.comment },
