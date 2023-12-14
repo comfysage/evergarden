@@ -28,6 +28,7 @@
 ---@field ike     Color
 ---@field syntax EvergardenSyntax
 ---@field style StyleConfig
+---@field sign Color
 ---@field comment Color
 ---@field bg_accent Color
 
@@ -75,6 +76,8 @@ function M.setup(colors, config)
   theme.fg1     = colors.fg
   theme.fg2     = colors.grey1
 
+  local sign_colors = { soft = theme.bg3 }
+  theme.sign      = sign_colors[config.contrast_dark] or theme.none
   theme.comment   = theme.fg2
   theme.bg_accent = theme.bg2
 
