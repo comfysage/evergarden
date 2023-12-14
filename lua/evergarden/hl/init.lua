@@ -308,9 +308,9 @@ function M.setup(theme, config)
   hl_groups['TelescopePreviewBorder'] = { link = "TelescopeBorder" }
 
   -- GitSigns
-  hl_groups['GitGutterAdd']    = { link = "DiffAdd" }
-  hl_groups['GitGutterChange'] = { link = "DiffChange" }
-  hl_groups['GitGutterDelete'] = { link = "DiffDelete" }
+  hl_groups['GitGutterAdd']    = { theme.diff.add,    theme.sign }
+  hl_groups['GitGutterChange'] = { theme.diff.change, theme.sign }
+  hl_groups['GitGutterDelete'] = { theme.diff.delete, theme.sign }
   hl_groups['GitGutterChangeDelete'] = { link = 'GitGutterChange' }
 
   -- Cmp
