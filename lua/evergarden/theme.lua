@@ -27,6 +27,7 @@
 ---@field seiun   Color
 ---@field ike     Color
 ---@field syntax EvergardenSyntax
+---@field diagnostic { ['ok'|'error'|'warn'|'info'|'hint']: Color }
 ---@field style StyleConfig
 ---@field sign Color
 ---@field comment Color
@@ -100,6 +101,13 @@ function M.setup(colors, config)
     string = theme.shinme,
     macro = theme.taiyo,
     annotation = theme.sakura,
+  }
+  theme.diagnostic = {
+    ok = theme.shinme,
+    error = theme.sakura,
+    warn = theme.sakaeru,
+    info = theme.sage,
+    hint = theme.sukai,
   }
 
   theme.style = {
