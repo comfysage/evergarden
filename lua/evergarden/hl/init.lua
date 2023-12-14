@@ -50,6 +50,8 @@ function M.setup(theme, config)
     FloatShadow        = { theme.none, theme.none },
     FloatShadowThrough = { theme.none, theme.none },
 
+    Question = { theme.comment },
+
     Search = { theme.taiyo, reverse = config.style.search.reverse },
     IncSearch = { theme.taiyo, reverse = config.style.search.inc_reverse },
 
