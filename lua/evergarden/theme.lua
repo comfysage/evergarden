@@ -29,6 +29,7 @@
 ---@field syntax EvergardenSyntax
 ---@field style StyleConfig
 ---@field comment Color
+---@field bg_accent Color
 
 ---@class EvergardenSyntax
 ---@field keyword Color
@@ -74,7 +75,8 @@ function M.setup(colors, config)
   theme.fg1     = colors.fg
   theme.fg2     = colors.grey1
 
-  theme.comment = theme.fg2
+  theme.comment   = theme.fg2
+  theme.bg_accent = theme.bg2
 
   theme.ike     = colors.aqua
   theme.shinme  = colors.green
