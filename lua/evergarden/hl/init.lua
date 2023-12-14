@@ -50,6 +50,17 @@ function M.setup(theme, config)
     FloatShadow        = { theme.none, theme.none },
     FloatShadowThrough = { theme.none, theme.none },
 
+    OkText       = { theme.diagnostic.ok,    theme.none      },
+    ErrorText    = { theme.diagnostic.error, theme.none      },
+    WarningText  = { theme.diagnostic.warn,  theme.none      },
+    InfoText     = { theme.diagnostic.info,  theme.none      },
+    HintText     = { theme.diagnostic.hint,  theme.none      },
+    OkFloat      = { theme.diagnostic.ok,    theme.bg_accent },
+    ErrorFloat   = { theme.diagnostic.error, theme.bg_accent },
+    WarningFloat = { theme.diagnostic.warn,  theme.bg_accent },
+    InfoFloat    = { theme.diagnostic.info,  theme.bg_accent },
+    HintFloat    = { theme.diagnostic.hint,  theme.bg_accent },
+
     Question = { theme.comment },
 
     Search = { theme.taiyo, reverse = config.style.search.reverse },
