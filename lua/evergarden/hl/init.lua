@@ -45,6 +45,8 @@ function M.setup(theme, config)
     FoldColumn = { theme.bg1 },
 
     NormalFloat        = { theme.fg, theme.bg_accent },
+    StatusLine         = { theme.fg2, theme.none },
+    StatusLineNC       = { theme.fg2, theme.bg1 },
     FloatShadow        = { theme.none, theme.none },
     FloatShadowThrough = { theme.none, theme.none },
 
