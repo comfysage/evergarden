@@ -44,6 +44,10 @@ function M.setup(theme, config)
     Folded = { theme.comment },
     FoldColumn = { theme.bg1 },
 
+    NormalFloat        = { theme.fg, theme.bg_accent },
+    FloatShadow        = { theme.none, theme.none },
+    FloatShadowThrough = { theme.none, theme.none },
+
     Search = { theme.taiyo, reverse = config.style.search.reverse },
     IncSearch = { theme.taiyo, reverse = config.style.search.inc_reverse },
 
