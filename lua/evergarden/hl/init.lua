@@ -55,9 +55,9 @@ function M.setup(theme, config)
     Search = { theme.taiyo, reverse = config.style.search.reverse },
     IncSearch = { theme.taiyo, reverse = config.style.search.inc_reverse },
 
-    Error = { theme.sakura },
-    ErrorMsg = { link = "Error" },
-    WarningMsg = { link = "Error" },
+    Error      = { theme.diagnostic.error },
+    ErrorMsg   = { link = "Error" },
+    WarningMsg = { theme.diagnostic.warn },
     MoreMsg = { theme.comment },
     ModeMsg = { theme.bg2, theme.none },
 
