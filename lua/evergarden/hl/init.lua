@@ -35,6 +35,7 @@ function M.setup(theme, config)
     CursorLineNr = { theme.comment },
     SignColumn = { theme.none, theme.sign },
     WinSeparator = { theme.bg2 },
+    VertSplit    = { link = "WinSeparator" },
     TabLineSel = config.style.tabline.reverse and { theme.base.fg, theme.colors[config.style.tabline.color] } or { theme.colors[config.style.tabline.color], theme.base.bg },
     TabLine = { theme.comment, theme.bg },
     TabLineFill = { link = 'TabLine' },
