@@ -208,6 +208,7 @@ function M.setup(theme, config)
     healthError                          = { link = "DiagnosticError" },
     healthSuccess                        = { link = "DiagnosticOk" },
     healthWarning                        = { link = "DiagnosticWarn" },
+    DiagnosticDeprecated = { theme.diagnostic.warn, theme.none, strikethrough = true }
   }
 
   if vim.fn.has('nvim-0.8.0') then
