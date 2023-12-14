@@ -165,31 +165,30 @@ function M.setup(theme, config)
     SpellRare  = { theme.seiun },
 
     -- Diagnostics
-    DiagnosticFloatingError              = { link = "ErrorFloat" },
-    DiagnosticFloatingWarn               = { link = "WarningFloat" },
-    DiagnosticFloatingInfo               = { link = "InfoFloat" },
-    DiagnosticFloatingHint               = { link = "HintFloat" },
-    --[[ DiagnosticError                      = { link = "AdachiRedDark" },
-    DiagnosticWarn                       = { link = "AdachiYellowDark" },
-    DiagnosticInfo                       = { link = "AdachiAquaDark" }, ]]
-    -- DiagnosticHint                       = { link = "AdachiAquaDark" },
-    DiagnosticOk = { theme.shinme },
-    DiagnosticError = { theme.sakura },
-    DiagnosticWarn = { theme.sakaeru },
-    DiagnosticInfo = { theme.sage },
-    DiagnosticHint = { theme.sukai },
+    DiagnosticFloatingError = { link = "ErrorFloat" },
+    DiagnosticFloatingWarn  = { link = "WarningFloat" },
+    DiagnosticFloatingInfo  = { link = "InfoFloat" },
+    DiagnosticFloatingHint  = { link = "HintFloat" },
+    DiagnosticFloatingOk    = { link = "OkFloat" },
+    DiagnosticOk            = { theme.diagnostic.ok    },
+    DiagnosticError         = { theme.diagnostic.error },
+    DiagnosticWarn          = { theme.diagnostic.warn  },
+    DiagnosticInfo          = { theme.diagnostic.info  },
+    DiagnosticHint          = { theme.diagnostic.hint  },
     DiagnosticVirtualTextError           = { link = "DiagnosticError" },
     DiagnosticVirtualTextWarn            = { link = "DiagnosticWarn" },
     DiagnosticVirtualTextInfo            = { link = "DiagnosticInfo" },
     DiagnosticVirtualTextHint            = { link = "DiagnosticHint" },
-    DiagnosticUnderlineError             = { link = "ErrorText" },
-    DiagnosticUnderlineWarn              = { link = "WarningText" },
-    DiagnosticUnderlineInfo              = { link = "InfoText" },
-    DiagnosticUnderlineHint              = { link = "HintText" },
-    DiagnosticSignError                  = { link = "AdachiRedSign" },
-    DiagnosticSignWarn                   = { link = "AdachiYellowSign" },
-    DiagnosticSignInfo                   = { link = "AdachiBlueSign" },
-    DiagnosticSignHint                   = { link = "AdachiGreenSign" },
+    DiagnosticUnderlineOk                = { theme.diagnostic.ok,    theme.none, underline = true },
+    DiagnosticUnderlineError             = { theme.diagnostic.error, theme.none, underline = true },
+    DiagnosticUnderlineWarn              = { theme.diagnostic.warn,  theme.none, underline = true },
+    DiagnosticUnderlineInfo              = { theme.diagnostic.info,  theme.none, underline = true },
+    DiagnosticUnderlineHint              = { theme.diagnostic.hint,  theme.none, underline = true },
+    DiagnosticSignOk                     = { theme.diagnostic.ok,    theme.sign },
+    DiagnosticSignError                  = { theme.diagnostic.error, theme.sign },
+    DiagnosticSignWarn                   = { theme.diagnostic.warn,  theme.sign },
+    DiagnosticSignInfo                   = { theme.diagnostic.info,  theme.sign },
+    DiagnosticSignHint                   = { theme.diagnostic.hint,  theme.sign },
     LspDiagnosticsFloatingError          = { link = "DiagnosticFloatingError" },
     LspDiagnosticsFloatingWarning        = { link = "DiagnosticFloatingWarn" },
     LspDiagnosticsFloatingInformation    = { link = "DiagnosticFloatingInfo" },
@@ -300,6 +299,8 @@ function M.setup(theme, config)
   hl_groups['@none.markdown'] = { theme.none, theme.none }
   hl_groups['@text.emphasis'] = { theme.taiyo, italic = true }
 
+  -- hl_groups['@include.typescript'] = { theme.syntax.keyword }
+
   hl_groups['markdownH1'] = { theme.seiun }
   hl_groups['markdownH2'] = { theme.taiyo }
   hl_groups['markdownH3'] = { theme.shinme }
@@ -359,6 +360,7 @@ function M.setup(theme, config)
   hl_groups['CmpItemAbbrMatch']      = { link = "Search" }
   hl_groups['CmpItemAbbrMatchFuzzy'] = { link = "CmpItemAbbrMatch" }
 
+  -- lukas-reineke/indent-blankline.nvim
   hl_groups['IndentBlanklineIndent1'] = { theme.bg2, nocombine = true }
   hl_groups['IndentBlanklineIndent2'] = { theme.colors.red, nocombine = true }
   hl_groups['IndentBlanklineIndent3'] = { theme.bg2, nocombine = true }
@@ -373,6 +375,9 @@ function M.setup(theme, config)
   hl_groups['IndentBlanklineIndent10'] = { theme.colors.blue, nocombine = true }
   hl_groups['IndentBlanklineIndent11'] = { theme.bg2, nocombine = true }
   hl_groups['IndentBlanklineIndent12'] = { theme.colors.purple, nocombine = true }
+
+  -- simrat39/symbols-outline.nvim
+  hl_groups['FocusedSymbol'] = { theme.syntax.call }
 
   if config.override_terminal then
     require 'evergarden.hl.terminal'(theme, theme.colors)
