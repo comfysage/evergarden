@@ -1,7 +1,7 @@
----@class Color { [1]: string, [2]: number }
+---@class EvergardenColor { [1]: string, [2]: number }
 
----@alias EvergardenColor 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'purple'|'grey0'|'grey1'|'grey2'
----@alias EvergardenColors { [EvergardenColor]: Color }
+---@alias EvergardenColorField 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'purple'|'grey0'|'grey1'|'grey2'
+---@alias EvergardenColors { [EvergardenColorField]: EvergardenColor }
 
 ---@type EvergardenColors
 _G.evergarden_colors = {

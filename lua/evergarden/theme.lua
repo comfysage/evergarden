@@ -1,49 +1,49 @@
 ---@class StyleConfig
----@field tabline { reverse: boolean, color: EvergardenColor }
+---@field tabline { reverse: boolean, color: EvergardenColorField }
 ---@field search { reverse: boolean, inc_reverse: boolean }
 ---@field types { italic: boolean }
 ---@field keyword { italic: boolean }
 ---@field comment { italic: boolean }
 
 ---@class EvergardenTheme
----@field none Color
+---@field none EvergardenColor
 ---@field colors EvergardenColors
----@field base { fg: Color, bg: Color }
----@field bg Color
----@field fg Color
----@field bg0 Color
----@field bg1 Color
----@field bg2 Color
----@field bg3 Color
----@field fg0 Color
----@field fg1 Color
----@field fg2 Color
----@field sakura  Color
----@field sage    Color
----@field sukai   Color
----@field shinme  Color
----@field sakaeru Color
----@field taiyo Color
----@field seiun   Color
----@field ike     Color
+---@field base { fg: EvergardenColor, bg: EvergardenColor }
+---@field bg EvergardenColor
+---@field fg EvergardenColor
+---@field bg0 EvergardenColor
+---@field bg1 EvergardenColor
+---@field bg2 EvergardenColor
+---@field bg3 EvergardenColor
+---@field fg0 EvergardenColor
+---@field fg1 EvergardenColor
+---@field fg2 EvergardenColor
+---@field sakura  EvergardenColor
+---@field sage    EvergardenColor
+---@field sukai   EvergardenColor
+---@field shinme  EvergardenColor
+---@field sakaeru EvergardenColor
+---@field taiyo EvergardenColor
+---@field seiun   EvergardenColor
+---@field ike     EvergardenColor
 ---@field syntax EvergardenSyntax
----@field diagnostic { ['ok'|'error'|'warn'|'info'|'hint']: Color }
----@field diff { ['add'|'delete'|'change']: Color }
+---@field diagnostic { ['ok'|'error'|'warn'|'info'|'hint']: EvergardenColor }
+---@field diff { ['add'|'delete'|'change']: EvergardenColor }
 ---@field style StyleConfig
----@field sign Color
----@field comment Color
----@field bg_accent Color
+---@field sign EvergardenColor
+---@field comment EvergardenColor
+---@field bg_accent EvergardenColor
 
 ---@class EvergardenSyntax
----@field keyword Color
----@field object Color
----@field type Color
----@field context Color
----@field constant Color
----@field call Color
----@field string Color
----@field macro Color
----@field annotation Color
+---@field keyword EvergardenColor
+---@field object EvergardenColor
+---@field type EvergardenColor
+---@field context EvergardenColor
+---@field constant EvergardenColor
+---@field call EvergardenColor
+---@field string EvergardenColor
+---@field macro EvergardenColor
+---@field annotation EvergardenColor
 
 local M = {}
 
