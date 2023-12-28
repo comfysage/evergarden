@@ -1,6 +1,6 @@
 ![preview](images/preview-rust__data.png)
 
-evergarden is a cozy neovim colorscheme for cozy morning coding.
+evergarden is a comfy neovim colorscheme for cozy morning coding.
 
 evergarden is inspired by the [everforest colorscheme](https://github.com/sainnhe/everforest).
 
