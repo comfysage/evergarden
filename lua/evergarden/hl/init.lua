@@ -347,7 +347,7 @@ function M.setup(theme, config)
   hl_groups['CmpItemKindSnippet']  = { theme.syntax.macro }
   hl_groups['CmpItemKindColor']  = { theme.syntax.constant }
   hl_groups['CmpItemKindFile']  = { theme.syntax.type }
-  hl_groups['CmpItemKindReference']  = { theme.fg1 }
+  hl_groups['CmpItemKindReference']  = { theme.fg0 }
   hl_groups['CmpItemKindFolder']  = { theme.syntax.type }
   hl_groups['CmpItemKindEnumMember']  = { theme.syntax.constant }
   hl_groups['CmpItemKindConstant']  = { theme.syntax.constant }
