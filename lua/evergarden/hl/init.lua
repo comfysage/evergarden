@@ -82,6 +82,8 @@ function M.setup(theme, config)
 
     Directory = { theme.colors.grey1 },
 
+    Conceal = { theme.bg3 },
+
     Underlined = { theme.none, theme.none },
 
     -- Treesitter
