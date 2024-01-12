@@ -46,7 +46,7 @@ function M.setup(theme, config)
     Folded = { theme.comment },
     FoldColumn = { theme.bg1 },
 
-    NormalFloat        = { theme.fg, theme.bg_accent },
+    NormalFloat        = { theme.fg, theme.bg },
     FloatBorder        = { theme.bg2 },
     StatusLine         = { theme.fg2, theme.none },
     StatusLineNC       = { theme.fg2, theme.bg1 },
