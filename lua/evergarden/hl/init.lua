@@ -284,6 +284,8 @@ function M.setup(theme, config)
   end
 
   -- lsp
+  hl_groups['@none'] = { theme.fg }
+
   hl_groups['@constructor.lua'] = { theme.syntax.context }
 
   hl_groups['@lsp.type.namespace'] = { link = "TSNamespace" }
