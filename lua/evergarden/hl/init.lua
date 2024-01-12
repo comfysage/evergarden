@@ -31,6 +31,8 @@ function M.setup(theme, config)
     CursorColumn = { theme.none, theme.bg1 },
     QuickFixLine = { theme.none, theme.bg1 },
 
+    Visual = { theme.none, theme.bg3 },
+
     LineNr = { theme.bg2 },
     CursorLineNr = { theme.comment },
     SignColumn = { theme.none, theme.sign },
