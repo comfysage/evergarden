@@ -1,5 +1,5 @@
----@param theme EvergardenTheme
----@param colors EvergardenColors
+---@param theme evergarden.types.theme
+---@param colors evergarden.types.colors
 return function(theme, colors)
   vim.g.terminal_color_0  = colors.bg0[1]
   vim.g.terminal_color_8  = colors.bg1[1]

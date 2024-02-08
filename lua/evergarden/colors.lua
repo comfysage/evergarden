@@ -1,9 +1,9 @@
----@class EvergardenColor { [1]: string, [2]: number }
+---@class evergarden.types.color { [1]: string, [2]: number }
 
----@alias EvergardenColorField 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'purple'|'grey0'|'grey1'|'grey2'
----@alias EvergardenColors { [EvergardenColorField]: EvergardenColor }
+---@alias evergarden.types.colors.enum 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'purple'|'grey0'|'grey1'|'grey2'
+---@alias evergarden.types.colors { [evergarden.types.colors.enum]: evergarden.types.color }
 
----@type EvergardenColors
+---@type evergarden.types.colors
 _G.evergarden_colors = {
   bg0_hard    = { "#141b1f", 0 },
   bg0         = { "#272E32", 0 },
@@ -32,10 +32,10 @@ function M.colors()
   return _G.evergarden_colors
 end
 
----@param config EvergardenConfig?
----@return EvergardenTheme
+---@param config evergarden.types.config?
+---@return evergarden.types.theme
 function M.setup(config)
-  ---@type EvergardenConfig
+  ---@type evergarden.types.config
   config = vim.tbl_extend("force", _G.evergarden_config, config or {})
   return require 'evergarden.theme'.setup(M.colors(), config)
 end

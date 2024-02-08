@@ -1,13 +1,13 @@
 local evergarden = {}
 
----@class EvergardenConfig
+---@class evergarden.types.config
 ---@field transparent_background boolean
 ---@field contrast_dark 'hard'|'medium'|'soft'
 ---@field override_terminal boolean
----@field style StyleConfig
----@field overrides HLGroups
+---@field style evergarden.types.styleconfig
+---@field overrides evergarden.types.hlgroups
 
----@type EvergardenConfig
+---@type evergarden.types.config
 evergarden.default_config = {
     transparent_background = false,
     contrast_dark = 'medium',
@@ -22,16 +22,16 @@ evergarden.default_config = {
     overrides = {},
 }
 
----@type EvergardenConfig
+---@type evergarden.types.config
 _G.evergarden_config = vim.tbl_deep_extend("force", evergarden.default_config, _G.evergarden_config or {})
 
----@param config EvergardenConfig|table
+---@param config evergarden.types.config|table
 function evergarden.setup(config)
     _G.evergarden_config = vim.tbl_deep_extend("force", _G.evergarden_config, config or {})
 end
 
 ---@param group string
----@param colors ColorSpec
+---@param colors evergarden.types.colorspec
 local function set_hi(group, colors)
     if not vim.tbl_isempty(colors) then
         ---@type vim.api.keyset.highlight
@@ -46,7 +46,7 @@ local function set_hi(group, colors)
     end
 end
 
----@param hlgroups HLGroups
+---@param hlgroups evergarden.types.hlgroups
 local function set_highlights(hlgroups)
     vim.cmd("highlight Normal guifg=" .. hlgroups.Normal[1][1] .. " guibg=" .. hlgroups.Normal[2][1].. " ctermfg=" .. hlgroups.Normal[1][2] .. " ctermbg=" .. hlgroups.Normal[2][2])
     hlgroups.Normal = nil
@@ -63,11 +63,11 @@ function evergarden.load(_)
     vim.g.colors_name = 'evergarden'
     vim.o.termguicolors = true
 
-    if vim.o.background == 'light' then
-        _G.evergarden_config.theme = 'light'
-    elseif vim.o.background == 'dark' then
-        _G.evergarden_config.theme = 'default'
-    end
+    -- if vim.o.background == 'light' then
+    --     _G.evergarden_config.theme = 'light'
+    -- elseif vim.o.background == 'dark' then
+    --     _G.evergarden_config.theme = 'default'
+    -- end
 
     local theme = require 'evergarden.colors'.setup()
     local hlgroups = require 'evergarden.hl.init'.setup(theme, _G.evergarden_config)
@@ -76,8 +76,7 @@ function evergarden.load(_)
 end
 
 function evergarden.colors()
-    require 'evergarden.colors'
-    return _G.evergarden_colors
+    return require 'evergarden.colors'.colors()
 end
 
 return evergarden

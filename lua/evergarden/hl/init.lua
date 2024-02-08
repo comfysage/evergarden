@@ -1,12 +1,12 @@
 local M = {}
 
----@alias ColorSpec { [1]: Color, [2]: Color, link: string, reverse: boolean }
----@alias HLGroups { [string]: ColorSpec }
+---@alias evergarden.types.colorspec { [1]: Color, [2]: Color, link: string, reverse: boolean }
+---@alias evergarden.types.hlgroups { [string]: evergarden.types.colorspec }
 
----@param theme EvergardenTheme
----@param config EvergardenConfig
+---@param theme evergarden.types.theme
+---@param config evergarden.types.config
 function M.setup(theme, config)
-  ---@type HLGroups
+  ---@type evergarden.types.hlgroups
   local hl_groups = {
     Normal = { theme.fg, theme.bg },
     Statement = { theme.syntax.keyword },

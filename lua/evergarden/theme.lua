@@ -1,55 +1,55 @@
----@class StyleConfig
----@field tabline { reverse: boolean, color: EvergardenColorField }
+---@class evergarden.types.styleconfig
+---@field tabline { reverse: boolean, color: evergarden.types.colors.enum }
 ---@field search { reverse: boolean, inc_reverse: boolean }
 ---@field types { italic: boolean }
 ---@field keyword { italic: boolean }
 ---@field comment { italic: boolean }
 
----@class EvergardenTheme
----@field none EvergardenColor
----@field colors EvergardenColors
----@field base { fg: EvergardenColor, bg: EvergardenColor }
----@field bg EvergardenColor
----@field fg EvergardenColor
----@field bg0 EvergardenColor
----@field bg1 EvergardenColor
----@field bg2 EvergardenColor
----@field bg3 EvergardenColor
----@field fg0 EvergardenColor
----@field fg1 EvergardenColor
----@field fg2 EvergardenColor
----@field sakura  EvergardenColor
----@field sage    EvergardenColor
----@field sukai   EvergardenColor
----@field shinme  EvergardenColor
----@field sakaeru EvergardenColor
----@field taiyo EvergardenColor
----@field seiun   EvergardenColor
----@field ike     EvergardenColor
+---@class evergarden.types.theme
+---@field none evergarden.types.color
+---@field colors evergarden.types.colors
+---@field base { fg: evergarden.types.color, bg: evergarden.types.color }
+---@field bg evergarden.types.color
+---@field fg evergarden.types.color
+---@field bg0 evergarden.types.color
+---@field bg1 evergarden.types.color
+---@field bg2 evergarden.types.color
+---@field bg3 evergarden.types.color
+---@field fg0 evergarden.types.color
+---@field fg1 evergarden.types.color
+---@field fg2 evergarden.types.color
+---@field sakura  evergarden.types.color
+---@field sage    evergarden.types.color
+---@field sukai   evergarden.types.color
+---@field shinme  evergarden.types.color
+---@field sakaeru evergarden.types.color
+---@field taiyo evergarden.types.color
+---@field seiun   evergarden.types.color
+---@field ike     evergarden.types.color
 ---@field syntax EvergardenSyntax
----@field diagnostic { ['ok'|'error'|'warn'|'info'|'hint']: EvergardenColor }
----@field diff { ['add'|'delete'|'change']: EvergardenColor }
----@field style StyleConfig
----@field sign EvergardenColor
----@field comment EvergardenColor
----@field bg_accent EvergardenColor
+---@field diagnostic { ['ok'|'error'|'warn'|'info'|'hint']: evergarden.types.color }
+---@field diff { ['add'|'delete'|'change']: evergarden.types.color }
+---@field style evergarden.types.styleconfig
+---@field sign evergarden.types.color
+---@field comment evergarden.types.color
+---@field bg_accent evergarden.types.color
 
 ---@class EvergardenSyntax
----@field keyword EvergardenColor
----@field object EvergardenColor
----@field type EvergardenColor
----@field context EvergardenColor
----@field constant EvergardenColor
----@field call EvergardenColor
----@field string EvergardenColor
----@field macro EvergardenColor
----@field annotation EvergardenColor
+---@field keyword evergarden.types.color
+---@field object evergarden.types.color
+---@field type evergarden.types.color
+---@field context evergarden.types.color
+---@field constant evergarden.types.color
+---@field call evergarden.types.color
+---@field string evergarden.types.color
+---@field macro evergarden.types.color
+---@field annotation evergarden.types.color
 
 local M = {}
 
----@param colors EvergardenColors
----@param config EvergardenConfig
----@return EvergardenTheme
+---@param colors evergarden.types.colors
+---@param config evergarden.types.config
+---@return evergarden.types.theme
 function M.setup(colors, config)
   local theme   = {}
 
