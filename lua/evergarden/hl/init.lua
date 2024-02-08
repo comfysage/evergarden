@@ -88,63 +88,6 @@ function M.setup(theme, config)
 
     Underlined = { theme.none, theme.none },
 
-    -- Treesitter
-    --[[ TSStrong    = { theme.none, theme.none, bold = theme.bold.general },
-    TSEmphasis  = { theme.none, theme.none, italic = theme.italic.general },
-    TSUnderline = { theme.none, theme.none, underline = theme.underline.general },
-    TSNote      = { theme.blue, theme.bg0, bold = theme.bold.general },
-    TSWarning   = { theme.yellow, theme.bg0, bold = theme.bold.general },
-    TSDanger    = { theme.red, theme.bg0, bold = theme.bold.general }, ]]
-
-    TSAnnotation         = { theme.seiun },
-    TSAttribute          = { theme.seiun },
-    TSBoolean            = { link = "Boolean" },
-    TSCharacter          = { link = "Character" },
-    TSComment            = { link = "Comment" },
-    TSConditional        = { link = "Conditional" },
-    TSConstBuiltin       = { link = "Constant" },
-    TSConstMacro         = { link = "Constant" },
-    TSConstant           = { link = "Constant" },
-    TSConstructor        = { theme.shinme },
-    TSException          = { link = "Exception" },
-    TSField              = { theme.syntax.object },
-    TSFloat              = { link = "Float" },
-    TSFuncBuiltin        = { link = "Constant" },
-    TSFuncMacro          = { theme.syntax.macro },
-    TSFunction           = { link = "Function" },
-    TSInclude            = { link = "Include" },
-    TSKeyword            = { link = "Keyword" },
-    TSKeywordFunction    = { link = "Keyword" },
-    TSKeywordOperator    = { theme.taiyo },
-    TSLabel              = { link = "Label" },
-    TSMethod             = { theme.syntax.context },
-    TSNamespace          = { link = "Constant" },
-    TSNone               = { link = "Normal" },
-    TSNumber             = { link = "Number" },
-    TSOperator           = { link = "Operator" },
-    TSParameter          = { link = "Identifier" },
-    TSParameterReference = { link = "TSParameter" },
-    TSProperty           = { theme.syntax.object },
-    TSPunctBracket       = { theme.syntax.context },
-    TSPunctDelimiter     = { link = "Delimiter" },
-    TSPunctSpecial       = { link = "Special" },
-    TSRepeat             = { link = "Repeat" },
-    TSStorageClass       = { link = "StorageClass" },
-    TSString             = { link = "String" },
-    TSStringEscape       = { theme.sakaeru },
-    TSStringRegex        = { theme.sakaeru },
-    TSSymbol             = { theme.fg1 },
-    TSTag                = { link = "Tag" },
-    TSTagDelimiter       = { theme.fg1 },
-    TSText               = { theme.fg1 },
-    TSStrike             = { theme.fg2 },
-    TSMath               = { theme.sukai },
-    TSType               = { link = "Type" },
-    TSTypeBuiltin        = { link = "Type" },
-    TSURI                = { link = "markdownUrl" },
-    TSVariable           = { link = "Identifier" },
-    TSVariableBuiltin    = { link = "Constant" },
-
     -- Completion Menu
     Pmenu = { theme.fg1, theme.bg2 },
     PmenuSel = { theme.bg2, theme.shinme, reverse = theme.style.search.reverse },
@@ -286,6 +229,9 @@ function M.setup(theme, config)
       end
     end ]]
   end
+
+  -- merge treesitter hl groups
+  hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.treesitter'(theme, config))
 
   -- lsp
   hl_groups['@none'] = { theme.fg }
