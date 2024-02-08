@@ -169,66 +169,8 @@ function M.setup(theme, config)
     DiagnosticDeprecated = { theme.diagnostic.warn, theme.none, strikethrough = true }
   }
 
-  if vim.fn.has('nvim-0.8.0') then
-    hl_groups['@annotation']            = { link = "TSAnnotation" }
-    hl_groups['@attribute']             = { link = "TSAttribute" }
-    hl_groups['@boolean']               = { link = "TSBoolean" }
-    hl_groups['@character']             = { link = "TSCharacter" }
-    hl_groups['@comment']               = { link = "TSComment" }
-    hl_groups['@conditional']           = { link = "TSConditional" }
-    hl_groups['@constant']              = { link = "TSConstant" }
-    hl_groups['@constant.builtin']      = { link = "TSConstBuiltin" }
-    hl_groups['@constant.macro']        = { link = "TSConstMacro" }
-    hl_groups['@constructor']           = { link = "TSConstructor" }
-    hl_groups['@exception']             = { link = "TSException" }
-    hl_groups['@field']                 = { link = "TSField" }
-    hl_groups['@float']                 = { link = "TSFloat" }
-    hl_groups['@function']              = { link = "TSFunction" }
-    hl_groups['@function.call']         = { link = "TSFunction" }
-    hl_groups['@function.builtin']      = { link = "TSFuncBuiltin" }
-    hl_groups['@function.macro']        = { link = "TSFuncMacro" }
-    hl_groups['@include']               = { link = "TSInclude" }
-    hl_groups['@keyword']               = { link = "TSKeyword" }
-    hl_groups['@keyword.function']      = { link = "TSKeywordFunction" }
-    hl_groups['@keyword.operator']      = { link = "TSKeywordOperator" }
-    hl_groups['@label']                 = { link = "TSLabel" }
-    hl_groups['@method']                = { link = "TSMethod" }
-    hl_groups['@method.call']           = { link = "@function.call" }
-    hl_groups['@namespace']             = { link = "TSNamespace" }
-    hl_groups['@none']                  = { link = "TSNone" }
-    hl_groups['@number']                = { link = "TSNumber" }
-    hl_groups['@operator']              = { link = "TSOperator" }
-    hl_groups['@parameter']             = { link = "TSParameter" }
-    hl_groups['@parameter.reference']   = { link = "TSParameterReference" }
-    hl_groups['@property']              = { link = "TSProperty" }
-    hl_groups['@punctuation.bracket']   = { link = "TSPunctBracket" }
-    hl_groups['@punctuation.delimiter'] = { link = "TSPunctDelimiter" }
-    hl_groups['@punctuation.special']   = { link = "TSPunctSpecial" }
-    hl_groups['@repeat']                = { link = "TSRepeat" }
-    hl_groups['@storageclass']          = { link = "TSStorageClass" }
-    hl_groups['@string']                = { link = "TSString" }
-    hl_groups['@string.escape']         = { link = "TSStringEscape" }
-    hl_groups['@string.regex']          = { link = "TSStringRegex" }
-    hl_groups['@symbol']                = { link = "TSSymbol" }
-    hl_groups['@tag']                   = { link = "TSTag" }
-    hl_groups['@tag.delimiter']         = { link = "TSTagDelimiter" }
-    hl_groups['@text']                  = { link = "TSText" }
-    hl_groups['@strike']                = { link = "TSStrike" }
-    hl_groups['@math']                  = { link = "TSMath" }
-    hl_groups['@type']                  = { link = "TSType" }
-    hl_groups['@type.builtin']          = { link = "TSTypeBuiltin" }
-    hl_groups['@type.qualifier']        = { link = "TSKeyword" }
-    hl_groups['@uri']                   = { link = "TSURI" }
-    hl_groups['@variable']              = { link = "TSVariable" }
-    hl_groups['@variable.builtin']      = { link = "TSVariableBuiltin" }
-
-    --[[ local captures = require 'adachi.hl.treesitter'.captures(theme)
-    for l_name, higroups in pairs(captures) do
-      for capture_name, higroup in pairs(higroups) do
-        hlGroups[capture_name .. '.' .. l_name] = higroup
-      end
-    end ]]
-  end
+  -- merge syntax hl groups
+  hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.syntax'(theme, config))
 
   -- merge treesitter hl groups
   hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.treesitter'(theme, config))
