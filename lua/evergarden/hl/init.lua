@@ -111,62 +111,6 @@ function M.setup(theme, config)
     SpellBad   = { theme.sage },
     SpellLocal = { theme.sage },
     SpellRare  = { theme.seiun },
-
-    -- Diagnostics
-    DiagnosticFloatingError = { link = "ErrorFloat" },
-    DiagnosticFloatingWarn  = { link = "WarningFloat" },
-    DiagnosticFloatingInfo  = { link = "InfoFloat" },
-    DiagnosticFloatingHint  = { link = "HintFloat" },
-    DiagnosticFloatingOk    = { link = "OkFloat" },
-    DiagnosticOk            = { theme.diagnostic.ok    },
-    DiagnosticError         = { theme.diagnostic.error },
-    DiagnosticWarn          = { theme.diagnostic.warn  },
-    DiagnosticInfo          = { theme.diagnostic.info  },
-    DiagnosticHint          = { theme.diagnostic.hint  },
-    DiagnosticVirtualTextError           = { link = "DiagnosticError" },
-    DiagnosticVirtualTextWarn            = { link = "DiagnosticWarn" },
-    DiagnosticVirtualTextInfo            = { link = "DiagnosticInfo" },
-    DiagnosticVirtualTextHint            = { link = "DiagnosticHint" },
-    DiagnosticUnderlineOk                = { theme.diagnostic.ok,    theme.none, underline = true },
-    DiagnosticUnderlineError             = { theme.diagnostic.error, theme.none, underline = true },
-    DiagnosticUnderlineWarn              = { theme.diagnostic.warn,  theme.none, underline = true },
-    DiagnosticUnderlineInfo              = { theme.diagnostic.info,  theme.none, underline = true },
-    DiagnosticUnderlineHint              = { theme.diagnostic.hint,  theme.none, underline = true },
-    DiagnosticSignOk                     = { theme.diagnostic.ok,    theme.sign },
-    DiagnosticSignError                  = { theme.diagnostic.error, theme.sign },
-    DiagnosticSignWarn                   = { theme.diagnostic.warn,  theme.sign },
-    DiagnosticSignInfo                   = { theme.diagnostic.info,  theme.sign },
-    DiagnosticSignHint                   = { theme.diagnostic.hint,  theme.sign },
-    LspDiagnosticsFloatingError          = { link = "DiagnosticFloatingError" },
-    LspDiagnosticsFloatingWarning        = { link = "DiagnosticFloatingWarn" },
-    LspDiagnosticsFloatingInformation    = { link = "DiagnosticFloatingInfo" },
-    LspDiagnosticsFloatingHint           = { link = "DiagnosticFloatingHint" },
-    LspDiagnosticsDefaultError           = { link = "DiagnosticError" },
-    LspDiagnosticsDefaultWarning         = { link = "DiagnosticWarn" },
-    LspDiagnosticsDefaultInformation     = { link = "DiagnosticInfo" },
-    LspDiagnosticsDefaultHint            = { link = "DiagnosticHint" },
-    LspDiagnosticsVirtualTextError       = { link = "DiagnosticVirtualTextError" },
-    LspDiagnosticsVirtualTextWarning     = { link = "DiagnosticVirtualTextWarn" },
-    LspDiagnosticsVirtualTextInformation = { link = "DiagnosticVirtualTextInfo" },
-    LspDiagnosticsVirtualTextHint        = { link = "DiagnosticVirtualTextHint" },
-    LspDiagnosticsUnderlineError         = { link = "DiagnosticUnderlineError" },
-    LspDiagnosticsUnderlineWarning       = { link = "DiagnosticUnderlineWarn" },
-    LspDiagnosticsUnderlineInformation   = { link = "DiagnosticUnderlineInfo" },
-    LspDiagnosticsUnderlineHint          = { link = "DiagnosticUnderlineHint" },
-    LspDiagnosticsSignError              = { link = "DiagnosticSignError" },
-    LspDiagnosticsSignWarning            = { link = "DiagnosticSignWarn" },
-    LspDiagnosticsSignInformation        = { link = "DiagnosticSignInfo" },
-    LspDiagnosticsSignHint               = { link = "DiagnosticSignHint" },
-    LspReferenceText                     = { link = "CurrentWord" },
-    LspReferenceRead                     = { link = "CurrentWord" },
-    LspReferenceWrite                    = { link = "CurrentWord" },
-    LspCodeLens                          = { link = "VirtualTextInfo" },
-    LspCodeLensSeparator                 = { link = "VirtualTextHint" },
-    LspSignatureActiveParameter          = { link = "Search" },
-    healthError                          = { link = "DiagnosticError" },
-    healthSuccess                        = { link = "DiagnosticOk" },
-    healthWarning                        = { link = "DiagnosticWarn" },
-    DiagnosticDeprecated = { theme.diagnostic.warn, theme.none, strikethrough = true }
   }
 
   -- merge syntax hl groups
@@ -174,6 +118,9 @@ function M.setup(theme, config)
 
   -- merge treesitter hl groups
   hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.treesitter'(theme, config))
+
+  -- merge diagnostic hl groups
+  hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.diagnostics'(theme, config))
 
   -- lsp
   hl_groups['@none'] = { theme.fg }
