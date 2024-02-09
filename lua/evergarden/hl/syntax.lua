@@ -115,5 +115,12 @@ return function(theme, config)
 
     ['@string.special.path']   = { link = '@string.special' }, -- filenames
     ['@string.special.url']    = { link = '@string.special' }, -- URIs (e.g. hyperlinks)
+
+    ['@diff.add']    = { theme.diff.add },
+    ['@diff.delete'] = { theme.diff.delete },
+    ['@diff.change'] = { theme.diff.change },
+    ['@diff.plus']   = { link = "@diff.add" },
+    ['@diff.minus']  = { link = "@diff.delete" },
+    ['@diff.delta']  = { link = "@diff.change" },
   }
 end

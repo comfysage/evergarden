@@ -76,12 +76,15 @@ function M.setup(theme, config)
     DiffDelete = { theme.diff.delete, theme.bg },
     DiffChange = { theme.diff.change, theme.bg },
     DiffText   = { theme.fg0, theme.bg },
-    diffAdded   = { theme.diff.add    },
-    diffRemoved = { theme.diff.delete },
-    diffChanged = { theme.diff.change },
+    diffAdded   = { link = "@diff.add"    },
+    diffRemoved = { link = "@diff.delete" },
+    diffChanged = { link = "@diff.change" },
     diffFile    = { theme.syntax.object },
     diffNewFile = { theme.syntax.object },
     diffLine    = { theme.syntax.context },
+    Added   = { link = "@diff.add"    },
+    Removed = { link = "@diff.delete" },
+    Changed = { link = "@diff.change" },
 
     -- Spell
     SpellCap   = { theme.shinme },
