@@ -72,5 +72,48 @@ return function(theme, config)
     Include                    = { link = '@annotation' },
 
     Conceal                    = { theme.bg3 },
+
+    -- lsp
+    ['@lsp.type.comment']      = { link = '@comment' },
+    ['@lsp.type.namespace']    = { link = '@namespace' },
+    ['@lsp.type.keyword']      = { link = '@keyword' },
+
+    -- text
+    ['@comment.todo']          = { theme.ike },
+    ['@comment.note']          = { theme.sukai },
+    ['@comment.fix']           = { theme.diagnostic.warn },
+    ['@comment.warning']       = { theme.diagnostic.warn },
+    ['@comment.error']         = { theme.diagnostic.error },
+
+    ['@nontext']               = { link = 'NonText' },
+    ['@text']                  = { theme.fg1 },
+    ['@text.emphasis']         = { theme.taiyo, italic = true },
+    ['@markup.strong']         = { theme.taiyo, bold = true, },
+    ['@markup.italic']         = { theme.taiyo, italic = true, },
+    ['@markup.heading']        = { link = '@text.title' },            -- headings, titles (including markers)
+    ['@markup.quote']          = { link = '@comment' },               -- block quotes
+    ['@markup.math']           = { link = '@markup.quote' },          -- math environments (e.g. `$ ... $` in LaTeX)
+    ['@markup.environment']    = { link = '@markup.quote' },          -- environments (e.g. in LaTeX)
+    ['@markup.link']           = { link = '@constant' },              -- text references, footnotes, citations, etc.
+    ['@markup.link.label']     = { link = '@markup.italic' },         -- link, reference descriptions
+    ['@markup.link.url']       = { link = '@nontext' },               -- URL-style links
+    ['@markup.raw']            = { link = '@comment' },               -- literal or verbatim text (e.g. inline code)
+    ['@markup.raw.block']      = { link = '@comment' },               -- literal or verbatim text as a stand-alone block
+    ['@markup.list']           = { link = '@nontext' },               -- list markers
+    ['@markup.list.checked']   = { link = '@string' },                -- checked todo-style list markers
+    ['@markup.list.unchecked'] = { link = '@punctuation.delimiter' }, -- unchecked todo-style list markers
+    ['@tag']                   = { link = '@punctuation.delimiter' }, -- XML-style tag names (e.g. in XML, HTML, etc.)
+    ['@tag.attribute']         = { link = '@attribute' },             -- XML-style tag attributes
+    ['@tag.delimiter']         = { link = '@punctuation.delimiter' }, -- XML-style tag delimiters
+
+    ['@text.title.1']          = { theme.seiun },
+    ['@text.title.2']          = { theme.taiyo },
+    ['@text.title.3']          = { theme.shinme },
+    ['@text.title.4']          = { link = '@text.title.1' },
+    ['@text.title.5']          = { link = '@text.title.2' },
+    ['@text.title.6']          = { link = '@text.title.3' },
+
+    ['@string.special.path']   = { link = '@string.special' }, -- filenames
+    ['@string.special.url']    = { link = '@string.special' }, -- URIs (e.g. hyperlinks)
   }
 end
