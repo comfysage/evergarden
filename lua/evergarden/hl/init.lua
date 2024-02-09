@@ -9,22 +9,6 @@ function M.setup(theme, config)
   ---@type evergarden.types.hlgroups
   local hl_groups = {
     Normal = { theme.fg, theme.bg },
-    Statement = { theme.syntax.keyword },
-    Keyword = { theme.syntax.keyword, italic = config.style.keyword.italic },
-    Identifier = { theme.syntax.object },
-    Type = { theme.syntax.type, italic = config.style.types.italic },
-    Function = { theme.syntax.call },
-    Structure = { theme.syntax.type },
-
-    Comment = { theme.comment, italic = config.style.comment.italic },
-
-    Special = { theme.syntax.context },
-    Delimiter = { theme.syntax.context },
-    Operator = { theme.syntax.context },
-    MatchParen = { theme.taiyo },
-
-    Constant = { theme.syntax.constant },
-    String = { theme.syntax.string },
 
     Cursor = { theme.sakaeru },
     CursorLine   = { theme.none, theme.bg1 },
@@ -77,14 +61,7 @@ function M.setup(theme, config)
 
     ColorColumn = { theme.none, theme.bg1 },
 
-    Todo = { theme.base.fg, theme.seiun },
-
-    PreProc = { theme.syntax.annotation },
-    Include = { theme.syntax.annotation },
-
     Directory = { theme.colors.grey1 },
-
-    Conceal = { theme.bg3 },
 
     Underlined = { theme.none, theme.none },
 
@@ -123,12 +100,7 @@ function M.setup(theme, config)
   hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.diagnostics'(theme, config))
 
   -- lsp
-  hl_groups['@none'] = { theme.fg }
-
   hl_groups['@constructor.lua'] = { theme.syntax.context }
-
-  hl_groups['@lsp.type.namespace'] = { link = "TSNamespace" }
-  hl_groups['@lsp.type.keyword.lua'] = { link = "TSKeyword" }
 
   hl_groups['@tag.html'] = { theme.syntax.keyword }
   hl_groups['@tag.delimiter.html'] = { theme.syntax.context }
@@ -139,16 +111,20 @@ function M.setup(theme, config)
 
   -- fix lsp hover doc
   hl_groups['@none.markdown'] = { theme.none, theme.none }
-  hl_groups['@text.emphasis'] = { theme.taiyo, italic = true }
 
   -- hl_groups['@include.typescript'] = { theme.syntax.keyword }
 
-  hl_groups['markdownH1'] = { theme.seiun }
-  hl_groups['markdownH2'] = { theme.taiyo }
-  hl_groups['markdownH3'] = { theme.shinme }
-  hl_groups['markdownH4'] = { link = "markdownH1" }
-  hl_groups['markdownH5'] = { link = "markdownH2" }
-  hl_groups['markdownH6'] = { link = "markdownH3" }
+  hl_groups['markdownH1'] = { link = '@text.title.1' }
+  hl_groups['markdownH2'] = { link = '@text.title.2' }
+  hl_groups['markdownH3'] = { link = '@text.title.3' }
+  hl_groups['markdownH4'] = { link = '@text.title.4' }
+  hl_groups['markdownH5'] = { link = '@text.title.5' }
+  hl_groups['markdownH6'] = { link = '@text.title.6' }
+
+  -- markdown
+  hl_groups['markdownBold'] = { link = '@markup.strong' }
+  hl_groups['markdownItalic'] = { link = '@markup.italic' }
+  hl_groups['markdownUrl'] = { link = '@markup.link.url' }
 
   -- Telescope
   hl_groups['TelescopeMatching']       = { link = "Search" }

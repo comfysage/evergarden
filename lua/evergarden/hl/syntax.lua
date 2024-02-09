@@ -50,5 +50,27 @@ return function(theme, config)
     ['@uri']                   = { theme.seiun },
     ['@variable']              = { theme.syntax.object },
     ['@variable.builtin']      = { link = '@constant' },
+
+    Identifier                 = { link = '@variable' },
+    Type                       = { link = '@type' },
+    Function                   = { link = '@function' },
+    Structure                  = { theme.syntax.type },
+    Keyword                    = { link = '@keyword' },
+    Statement                  = { link = '@keyword' },
+    Constant                   = { link = '@constant' },
+    String                     = { link = '@string' },
+
+    Comment                    = { link = '@comment' },
+    Special                    = { link = '@punctuation.special' },
+    Delimiter                  = { link = '@punctuation.delimiter' },
+    MatchParen                 = { theme.taiyo },
+    Operator                   = { link = '@operator' },
+
+    Todo                       = { link = '@comment.todo' },
+
+    PreProc                    = { link = '@annotation' },
+    Include                    = { link = '@annotation' },
+
+    Conceal                    = { theme.bg3 },
   }
 end
