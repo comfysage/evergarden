@@ -112,6 +112,12 @@ return function(theme, config)
     ['@text.title.4']          = { link = '@text.title.1' },
     ['@text.title.5']          = { link = '@text.title.2' },
     ['@text.title.6']          = { link = '@text.title.3' },
+    ['@markup.heading.1']      = { link = '@text.title.1' },
+    ['@markup.heading.2']      = { link = '@text.title.2' },
+    ['@markup.heading.3']      = { link = '@text.title.3' },
+    ['@markup.heading.4']      = { link = '@text.title.4' },
+    ['@markup.heading.5']      = { link = '@text.title.5' },
+    ['@markup.heading.6']      = { link = '@text.title.6' },
 
     ['@string.special.path']   = { link = '@string.special' }, -- filenames
     ['@string.special.url']    = { link = '@string.special' }, -- URIs (e.g. hyperlinks)
