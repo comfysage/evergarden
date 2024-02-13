@@ -99,7 +99,7 @@ return function(theme, config)
     ['@markup.link.url']       = { link = '@nontext' },               -- URL-style links
     ['@markup.raw']            = { link = '@comment' },               -- literal or verbatim text (e.g. inline code)
     ['@markup.raw.block']      = { link = '@comment' },               -- literal or verbatim text as a stand-alone block
-    ['@markup.list']           = { link = '@nontext' },               -- list markers
+    ['@markup.list']           = { link = '@delimiter' },             -- list markers
     ['@markup.list.checked']   = { link = '@string' },                -- checked todo-style list markers
     ['@markup.list.unchecked'] = { link = '@punctuation.delimiter' }, -- unchecked todo-style list markers
     ['@tag']                   = { link = '@punctuation.delimiter' }, -- XML-style tag names (e.g. in XML, HTML, etc.)
