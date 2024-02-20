@@ -33,6 +33,7 @@
 ---@field sign evergarden.types.color
 ---@field comment evergarden.types.color
 ---@field bg_accent evergarden.types.color
+---@field fg_accent evergarden.types.color
 
 ---@class EvergardenSyntax
 ---@field keyword evergarden.types.color
@@ -82,6 +83,7 @@ function M.setup(colors, config)
   theme.sign      = sign_colors[config.contrast_dark] or theme.none
   theme.comment   = theme.fg2
   theme.bg_accent = theme.bg2
+  theme.fg_accent = colors.bg4
 
   theme.ike     = colors.aqua
   theme.shinme  = colors.green

@@ -26,7 +26,7 @@ function M.setup(theme, config)
     TabLine = { theme.comment },
     TabLineFill = { link = 'TabLine' },
     Title = { theme.comment },
-    NonText = { theme.bg2, theme.none },
+    NonText = { theme.fg_accent },
     Folded = { theme.comment },
     FoldColumn = { theme.bg1 },
 

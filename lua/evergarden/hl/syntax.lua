@@ -71,7 +71,7 @@ return function(theme, config)
     PreProc                    = { link = '@annotation' },
     Include                    = { link = '@annotation' },
 
-    Conceal                    = { theme.bg3 },
+    Conceal                    = { theme.fg_accent },
 
     -- lsp
     ['@lsp.type.comment']      = { link = '@comment' },
