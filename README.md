@@ -12,7 +12,7 @@ using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 return {
-  'crispybaccoon/evergarden',
+  'comfysage/evergarden',
   opts = {
     transparent_background = true,
     contrast_dark = 'medium', -- 'hard'|'medium'|'soft'
@@ -24,7 +24,7 @@ return {
 using [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```Vim
-Plug 'crispybaccoon/evergarden'
+Plug 'comfysage/evergarden'
 ```
 
 ## Configuration
