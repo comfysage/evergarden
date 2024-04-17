@@ -189,20 +189,20 @@ function M.setup(theme, config)
   hl_groups['CmpItemAbbrMatchFuzzy'] = { link = "CmpItemAbbrMatch" }
 
   -- lukas-reineke/indent-blankline.nvim
-  hl_groups['IndentBlanklineIndent1'] = { theme.bg2, nocombine = true }
-  hl_groups['IndentBlanklineIndent2'] = { theme.colors.red, nocombine = true }
-  hl_groups['IndentBlanklineIndent3'] = { theme.bg2, nocombine = true }
-  hl_groups['IndentBlanklineIndent4'] = { theme.colors.orange, nocombine = true }
-  hl_groups['IndentBlanklineIndent3'] = { theme.bg2, nocombine = true }
-  hl_groups['IndentBlanklineIndent4'] = { theme.colors.yellow, nocombine = true }
-  hl_groups['IndentBlanklineIndent5'] = { theme.bg2, nocombine = true }
-  hl_groups['IndentBlanklineIndent6'] = { theme.colors.green, nocombine = true }
-  hl_groups['IndentBlanklineIndent7'] = { theme.bg2, nocombine = true }
-  hl_groups['IndentBlanklineIndent8'] = { theme.colors.aqua, nocombine = true }
-  hl_groups['IndentBlanklineIndent9'] = { theme.bg2, nocombine = true }
-  hl_groups['IndentBlanklineIndent10'] = { theme.colors.blue, nocombine = true }
-  hl_groups['IndentBlanklineIndent11'] = { theme.bg2, nocombine = true }
-  hl_groups['IndentBlanklineIndent12'] = { theme.colors.purple, nocombine = true }
+  hl_groups['@ibl.indent.char.1'] = { theme.bg2, nocombine = true }
+  hl_groups['@ibl.indent.char.2'] = { theme.colors.red, nocombine = true }
+  hl_groups['@ibl.indent.char.3'] = { theme.bg2, nocombine = true }
+  hl_groups['@ibl.indent.char.4'] = { theme.colors.orange, nocombine = true }
+  hl_groups['@ibl.indent.char.3'] = { theme.bg2, nocombine = true }
+  hl_groups['@ibl.indent.char.4'] = { theme.colors.yellow, nocombine = true }
+  hl_groups['@ibl.indent.char.5'] = { theme.bg2, nocombine = true }
+  hl_groups['@ibl.indent.char.6'] = { theme.colors.green, nocombine = true }
+  hl_groups['@ibl.indent.char.7'] = { theme.bg2, nocombine = true }
+  hl_groups['@ibl.indent.char.8'] = { theme.colors.aqua, nocombine = true }
+  hl_groups['@ibl.indent.char.9'] = { theme.bg2, nocombine = true }
+  hl_groups['@ibl.indent.char.10'] = { theme.colors.blue, nocombine = true }
+  hl_groups['@ibl.indent.char.11'] = { theme.bg2, nocombine = true }
+  hl_groups['@ibl.indent.char.12'] = { theme.colors.purple, nocombine = true }
 
   -- simrat39/symbols-outline.nvim
   hl_groups['FocusedSymbol'] = { theme.syntax.call }
