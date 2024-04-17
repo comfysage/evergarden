@@ -107,6 +107,7 @@ return function(theme, config)
     ['@tag.attribute']         = { link = '@attribute' },             -- XML-style tag attributes
     ['@tag.delimiter']         = { link = '@punctuation.delimiter' }, -- XML-style tag delimiters
 
+    ['@text.title']            = { theme.seiun },
     ['@text.title.1']          = { theme.seiun },
     ['@text.title.2']          = { theme.taiyo },
     ['@text.title.3']          = { theme.shinme },
