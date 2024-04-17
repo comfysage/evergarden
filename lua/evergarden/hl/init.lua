@@ -106,10 +106,16 @@ function M.setup(theme, config)
   -- lsp
   hl_groups['@constructor.lua'] = { theme.syntax.context }
 
-  hl_groups['@tag.html'] = { theme.syntax.keyword }
-  hl_groups['@tag.delimiter.html'] = { theme.syntax.context }
-  hl_groups['@tag.attribute.html'] = { theme.fg0 }
-  hl_groups['@string.html'] = { theme.sukai }
+  for _, ft in ipairs { 'html' } do
+    local ok, hl_ft_fn = pcall(require, ('evergarden.hl.ft.%s'):format(ft))
+    if ok then
+      ---@diagnostic disable-next-line: redefined-local
+      local ok, hl_imports = pcall(hl_ft_fn, theme, config)
+      if ok then
+        hl_groups = vim.tbl_deep_extend('force', hl_groups, hl_imports)
+      end
+    end
+  end
 
   hl_groups['@lsp.type.macro.rust'] = { theme.syntax.macro }
 
