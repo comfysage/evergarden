@@ -51,7 +51,8 @@ function M.setup(theme, config)
     Question = { theme.comment },
 
     Search = { theme.taiyo, reverse = config.style.search.reverse },
-    IncSearch = { theme.taiyo, reverse = config.style.search.inc_reverse },
+    CurSearch = { theme.taiyo, reverse = config.style.search.inc_reverse },
+    IncSearch = { link = 'CurSearch' },
 
     Error      = { theme.diagnostic.error },
     ErrorMsg   = { link = "Error" },
