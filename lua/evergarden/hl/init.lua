@@ -131,11 +131,17 @@ function M.setup(theme, config)
   hl_groups['markdownUrl'] = { link = '@markup.link.url' }
 
   -- Telescope
-  hl_groups['TelescopeMatching']       = { link = "Search" }
-  hl_groups['TelescopeSelection']      = { link = "Identifier" }
-  hl_groups['TelescopePromptPrefix']   = { link = "Constant" }
   hl_groups['TelescopeNormal']         = { theme.syntax.context }
+  -- hl_groups['TelescopeNormal'] = { link = 'Normal' }
+  hl_groups['TelescopePromptPrefix']   = { link = "Constant" }
+  hl_groups['TelescopePromptNormal'] = { 'none', 'none' }
+  hl_groups['TelescopeSelection']      = { link = "Identifier" }
+  hl_groups['TelescopeSelection'] = { 'none', theme.bg_accent }
   hl_groups['TelescopeSelectionCaret'] = { link = "TelescopeNormal" }
+  hl_groups['TelescopeMatching']       = { link = "Search" }
+  hl_groups['TelescopeMatching'] = { link = 'Search' }
+  hl_groups['TelescopeTitle'] = { link = 'FloatTitle' }
+  hl_groups['TelescopeBorder'] = { link = 'FloatBorder' }
 
   hl_groups['TelescopeBorder']        = { theme.bg2 }
   hl_groups['TelescopePromptBorder']  = { link = "TelescopeBorder" }
