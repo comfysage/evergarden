@@ -82,7 +82,7 @@ function M.setup(colors, config)
   local sign_colors = { soft = theme.bg3 }
   theme.sign      = sign_colors[config.contrast_dark] or theme.none
   theme.comment   = theme.fg2
-  theme.bg_accent = theme.bg2
+  theme.bg_accent = theme.bg1
   theme.fg_accent = colors.bg4
 
   theme.ike     = colors.aqua
