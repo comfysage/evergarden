@@ -55,7 +55,7 @@ local function set_highlights(hlgroups)
     end
 end
 
-function evergarden.load(_)
+function evergarden.load(opts)
     if vim.g.colors_name then
         vim.cmd('hi clear')
     end
@@ -68,9 +68,10 @@ function evergarden.load(_)
     -- elseif vim.o.background == 'dark' then
     --     _G.evergarden_config.theme = 'default'
     -- end
+    local cfg = vim.tbl_deep_extend('force', _G.evergarden_config, opts)
 
-    local theme = require 'evergarden.colors'.setup()
-    local hlgroups = require 'evergarden.hl.init'.setup(theme, _G.evergarden_config)
+    local theme = require 'evergarden.colors'.setup(cfg)
+    local hlgroups = require 'evergarden.hl.init'.setup(theme, cfg)
 
     set_highlights(hlgroups)
 end
