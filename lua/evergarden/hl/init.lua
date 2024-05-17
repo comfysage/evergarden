@@ -106,7 +106,7 @@ function M.setup(theme, config)
   -- lsp
   hl_groups['@constructor.lua'] = { theme.syntax.context }
 
-  for _, ft in ipairs { 'html' } do
+  for _, ft in ipairs { 'html', 'css' } do
     local ok, hl_ft_fn = pcall(require, ('evergarden.hl.ft.%s'):format(ft))
     if ok then
       ---@diagnostic disable-next-line: redefined-local
