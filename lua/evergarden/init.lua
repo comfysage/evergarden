@@ -9,25 +9,30 @@ local evergarden = {}
 
 ---@type evergarden.types.config
 evergarden.default_config = {
-    transparent_background = false,
-    contrast_dark = 'medium',
-    override_terminal = true,
-    style = {
-        tabline = { reverse = true, color = 'green' },
-        search = { reverse = false, inc_reverse = true },
-        types = { italic = true },
-        keyword = { italic = true },
-        comment = { italic = false },
-    },
-    overrides = {},
+  transparent_background = false,
+  contrast_dark = 'medium',
+  override_terminal = true,
+  style = {
+    tabline = { reverse = true, color = 'green' },
+    search = { reverse = false, inc_reverse = true },
+    types = { italic = true },
+    keyword = { italic = true },
+    comment = { italic = false },
+  },
+  overrides = {},
 }
 
 ---@type evergarden.types.config
-_G.evergarden_config = vim.tbl_deep_extend("force", evergarden.default_config, _G.evergarden_config or {})
+_G.evergarden_config = vim.tbl_deep_extend(
+  'force',
+  evergarden.default_config,
+  _G.evergarden_config or {}
+)
 
 ---@param config evergarden.types.config|table
 function evergarden.setup(config)
-    _G.evergarden_config = vim.tbl_deep_extend("force", _G.evergarden_config, config or {})
+  _G.evergarden_config =
+    vim.tbl_deep_extend('force', _G.evergarden_config, config or {})
 end
 
 ---@param group string
@@ -56,45 +61,45 @@ end
 
 ---@param hlgroups evergarden.types.hlgroups
 local function set_highlights(hlgroups)
-    ---@type evergarden.types.colorspec
-    local color = hlgroups.Normal
-    color.fg = color.fg or color[1] or 'none'
-    color.bg = color.bg or color[2] or 'none'
-    local normal = {}
-    normal.fg = type(color.fg) == 'table' and color.fg[1] or color.fg
-    normal.bg = type(color.bg) == 'table' and color.bg[1] or color.bg
-    normal.ctermfg = type(color.fg) == 'table' and color.fg[2] or 'none'
-    normal.ctermbg = type(color.bg) == 'table' and color.bg[2] or 'none'
-    vim.api.nvim_set_hl(0, 'Normal', normal)
-    hlgroups.Normal = nil
-    for group, colors in pairs(hlgroups) do
-        set_hi(group, colors)
-    end
+  ---@type evergarden.types.colorspec
+  local color = hlgroups.Normal
+  color.fg = color.fg or color[1] or 'none'
+  color.bg = color.bg or color[2] or 'none'
+  local normal = {}
+  normal.fg = type(color.fg) == 'table' and color.fg[1] or color.fg
+  normal.bg = type(color.bg) == 'table' and color.bg[1] or color.bg
+  normal.ctermfg = type(color.fg) == 'table' and color.fg[2] or 'none'
+  normal.ctermbg = type(color.bg) == 'table' and color.bg[2] or 'none'
+  vim.api.nvim_set_hl(0, 'Normal', normal)
+  hlgroups.Normal = nil
+  for group, colors in pairs(hlgroups) do
+    set_hi(group, colors)
+  end
 end
 
 function evergarden.load(opts)
-    if vim.g.colors_name then
-        vim.cmd('hi clear')
-    end
+  if vim.g.colors_name then
+    vim.cmd 'hi clear'
+  end
 
-    vim.g.colors_name = 'evergarden'
-    vim.o.termguicolors = true
+  vim.g.colors_name = 'evergarden'
+  vim.o.termguicolors = true
 
-    -- if vim.o.background == 'light' then
-    --     _G.evergarden_config.theme = 'light'
-    -- elseif vim.o.background == 'dark' then
-    --     _G.evergarden_config.theme = 'default'
-    -- end
-    local cfg = vim.tbl_deep_extend('force', _G.evergarden_config, opts)
+  -- if vim.o.background == 'light' then
+  --     _G.evergarden_config.theme = 'light'
+  -- elseif vim.o.background == 'dark' then
+  --     _G.evergarden_config.theme = 'default'
+  -- end
+  local cfg = vim.tbl_deep_extend('force', _G.evergarden_config, opts)
 
-    local theme = require 'evergarden.colors'.setup(cfg)
-    local hlgroups = require 'evergarden.hl.init'.setup(theme, cfg)
+  local theme = require('evergarden.colors').setup(cfg)
+  local hlgroups = require('evergarden.hl.init').setup(theme, cfg)
 
-    set_highlights(hlgroups)
+  set_highlights(hlgroups)
 end
 
 function evergarden.colors()
-    return require 'evergarden.colors'.colors()
+  return require('evergarden.colors').colors()
 end
 
 return evergarden
