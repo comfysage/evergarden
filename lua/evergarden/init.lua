@@ -56,7 +56,16 @@ end
 
 ---@param hlgroups evergarden.types.hlgroups
 local function set_highlights(hlgroups)
-    vim.cmd("highlight Normal guifg=" .. hlgroups.Normal[1][1] .. " guibg=" .. hlgroups.Normal[2][1].. " ctermfg=" .. hlgroups.Normal[1][2] .. " ctermbg=" .. hlgroups.Normal[2][2])
+    ---@type evergarden.types.colorspec
+    local color = hlgroups.Normal
+    color.fg = color.fg or color[1] or 'none'
+    color.bg = color.bg or color[2] or 'none'
+    local normal = {}
+    normal.fg = type(color.fg) == 'table' and color.fg[1] or color.fg
+    normal.bg = type(color.bg) == 'table' and color.bg[1] or color.bg
+    normal.ctermfg = type(color.fg) == 'table' and color.fg[2] or 'none'
+    normal.ctermbg = type(color.bg) == 'table' and color.bg[2] or 'none'
+    vim.api.nvim_set_hl(0, 'Normal', normal)
     hlgroups.Normal = nil
     for group, colors in pairs(hlgroups) do
         set_hi(group, colors)
