@@ -13,12 +13,16 @@ using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 return {
   'comfysage/evergarden',
-  opts = {
-    transparent_background = true,
-    contrast_dark = 'medium', -- 'hard'|'medium'|'soft'
-    overrides = { }, -- add custom overrides
-  }
-}
+  priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+  init = function() --  Here is where colorscheme is loaded
+    require('evergarden').setup({
+      transparent_background = true,
+      contrast_dark = 'medium', -- 'hard'|'medium'|'soft'
+      overrides = { }, -- add custom overrides
+    }
+    vim.cmd.colorscheme('evergarden')
+  end
+})
 ```
 
 using [vim-plug](https://github.com/junegunn/vim-plug):
