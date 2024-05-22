@@ -69,6 +69,11 @@ require 'evergarden'.setup {
 
 ![telescope preview](images/preview-telescope__files.png)
 
+## :sparkles: Extras
+
+- [kitty theme](./extras/kitty)
+- [base16-scheme](./extras/base16)
+
 ## License
 
 [MIT/X11](https://en.wikipedia.org/wiki/MIT_License)
