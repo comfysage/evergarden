@@ -38,43 +38,44 @@ end
 ---@param group string
 ---@param colors evergarden.types.colorspec
 local function set_hi(group, colors)
-  if type(colors) ~= 'table' or vim.tbl_isempty(colors) then
-    return
-  end
+    if not vim.tbl_isempty(colors) then
+        ---@type vim.api.keyset.highlight
+        local color = colors
 
-  colors.fg = colors.fg or colors[1] or 'none'
-  colors.bg = colors.bg or colors[2] or 'none'
+        -- priority colors[str] > colors[num][num] > colors[num] )
+        -- e.g. colors.fg > colors[1][1] > colors[1] 
+        if colors[1] then
+            if vim.tbl_islist(colors[1]) then
+                color.fg = colors.fg or colors[1][1] or 'NONE'
+                color.ctermfg = colors.ctermfg or colors[1][2] or 'NONE'
+            else
+                color.fg = colors.fg or colors[1]
+            end
+        end
 
-  ---@type vim.api.keyset.highlight
-  local color = vim.deepcopy(colors)
+        if colors[2] then
+            if vim.tbl_islist(colors[2]) then
+                color.bg = colors.bg or colors[2][1] or 'NONE'
+                color.ctermbg = colors.ctermbg and colors[2][2] or 'NONE'
+            else
+                color.bg = colors.bg or colors[2]
+            end
+        end
 
-  color.fg = type(colors.fg) == 'table' and colors.fg[1] or colors.fg
-  color.bg = type(colors.bg) == 'table' and colors.bg[1] or colors.bg
-  color.ctermfg = type(colors.fg) == 'table' and colors.fg[2] or 'none'
-  color.ctermbg = type(colors.bg) == 'table' and colors.bg[2] or 'none'
-  color[1] = nil
-  color[2] = nil
-  color.name = nil
+        color[1] = nil
+        color[2] = nil
 
-  vim.api.nvim_set_hl(0, group, color)
+        vim.api.nvim_set_hl(0, group, color)
+    end
 end
 
 ---@param hlgroups evergarden.types.hlgroups
 local function set_highlights(hlgroups)
-  ---@type evergarden.types.colorspec
-  local color = hlgroups.Normal
-  color.fg = color.fg or color[1] or 'none'
-  color.bg = color.bg or color[2] or 'none'
-  local normal = {}
-  normal.fg = type(color.fg) == 'table' and color.fg[1] or color.fg
-  normal.bg = type(color.bg) == 'table' and color.bg[1] or color.bg
-  normal.ctermfg = type(color.fg) == 'table' and color.fg[2] or 'none'
-  normal.ctermbg = type(color.bg) == 'table' and color.bg[2] or 'none'
-  vim.api.nvim_set_hl(0, 'Normal', normal)
-  hlgroups.Normal = nil
-  for group, colors in pairs(hlgroups) do
-    set_hi(group, colors)
-  end
+    vim.cmd("highlight Normal guifg=" .. hlgroups.Normal[1][1] .. " guibg=" .. hlgroups.Normal[2][1].. " ctermfg=" .. hlgroups.Normal[1][2] .. " ctermbg=" .. hlgroups.Normal[2][2])
+    hlgroups.Normal = nil
+    for group, colors in pairs(hlgroups) do
+        set_hi(group, colors)
+    end
 end
 
 function evergarden.load(opts)
