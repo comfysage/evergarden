@@ -1,0 +1,18 @@
+scheme: "evergarden"
+author: "https://github.com/comfysage"
+base00: "242B2E" # bg0
+base01: "343E44" # bg1
+base02: "46545B" # bg3
+base03: "5E6C70" # bg4
+base04: "859289" # grey1
+base05: "D3C6AA" # fg
+base06: "D3C6AA" # fg
+base07: "D3C6AA" # fg
+base08: "E67E80" # red
+base09: "E69875" # orange
+base0A: "DBBC7F" # yellow
+base0B: "B2C98F" # green
+base0C: "83C092" # aqua
+base0D: "7FBBB3" # blue
+base0E: "D699B6" # purple
+base0F: "5E6C70" # bg4
