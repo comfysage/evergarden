@@ -33,17 +33,25 @@ end
 ---@param group string
 ---@param colors evergarden.types.colorspec
 local function set_hi(group, colors)
-    if not vim.tbl_isempty(colors) then
-        ---@type vim.api.keyset.highlight
-        local color = colors
-        color.fg = colors[1] and colors[1][1] or 'NONE'
-        color.bg = colors[2] and colors[2][1] or 'NONE'
-        color.ctermfg = colors[1] and colors[1][2] or 'NONE'
-        color.ctermbg = colors[2] and colors[2][2] or 'NONE'
-        color[1] = nil
-        color[2] = nil
-        vim.api.nvim_set_hl(0, group, color)
-    end
+  if type(colors) ~= 'table' or vim.tbl_isempty(colors) then
+    return
+  end
+
+  colors.fg = colors.fg or colors[1] or 'none'
+  colors.bg = colors.bg or colors[2] or 'none'
+
+  ---@type vim.api.keyset.highlight
+  local color = vim.deepcopy(colors)
+
+  color.fg = type(colors.fg) == 'table' and colors.fg[1] or colors.fg
+  color.bg = type(colors.bg) == 'table' and colors.bg[1] or colors.bg
+  color.ctermfg = type(colors.fg) == 'table' and colors.fg[2] or 'none'
+  color.ctermbg = type(colors.bg) == 'table' and colors.bg[2] or 'none'
+  color[1] = nil
+  color[2] = nil
+  color.name = nil
+
+  vim.api.nvim_set_hl(0, group, color)
 end
 
 ---@param hlgroups evergarden.types.hlgroups
