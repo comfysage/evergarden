@@ -1,4 +1,4 @@
-![preview](images/preview-rust__data.png)
+![preview](./images/asset.rust.png)
 
 evergarden is a comfy neovim colorscheme for cozy morning coding.
 
@@ -85,7 +85,7 @@ require 'evergarden'.setup {
   [gitgutter]: https://github.com/airblade/vim-gitgutter
   [telescope]: https://github.com/nvim-telescope/telescope
 
-![telescope preview](images/preview-telescope__files.png)
+![telescope preview](./images/asset.telescope.png)
 
 ## :sparkles: Extras
 
