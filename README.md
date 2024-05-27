@@ -2,7 +2,7 @@
 
 evergarden is a comfy neovim colorscheme for cozy morning coding.
 
-evergarden is inspired by the [everforest colorscheme](https://github.com/sainnhe/everforest).
+evergarden is inspired by the [everforest colorscheme](https://github.com/sainnhe/everforest) and [nord colorscheme](https://github.com/nordtheme/nord).
 
 evergarden was designed as a cozy theme with a focus on readability and visual comfort.
 
