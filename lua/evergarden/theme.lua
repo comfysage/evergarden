@@ -93,13 +93,14 @@ function M.setup(colors, config)
   theme.sukai   = colors.blue
   theme.sage    = colors.aqua
   theme.seiun   = colors.purple
+  theme.roses   = colors.pink
 
   theme.syntax  = {
     keyword = theme.sakura,
     object = theme.fg1,
     type = theme.sakaeru,
     context = theme.fg0,
-    constant = theme.seiun,
+    constant = theme.roses,
     call = theme.shinme,
     string = theme.shinme,
     macro = theme.taiyo,
