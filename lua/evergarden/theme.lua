@@ -90,6 +90,7 @@ function M.setup(colors, config)
   theme.yellow = colors.yellow
   theme.green  = colors.green
   theme.aqua   = colors.aqua
+  theme.skye   = colors.skye
   theme.blue   = colors.blue
   theme.purple = colors.purple
   theme.pink   = colors.pink
@@ -110,7 +111,7 @@ function M.setup(colors, config)
     error = theme.red,
     warn = theme.yellow,
     info = theme.aqua,
-    hint = theme.blue,
+    hint = theme.skye,
   }
   theme.diff = {
     add = theme.green,

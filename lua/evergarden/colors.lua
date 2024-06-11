@@ -1,6 +1,6 @@
 ---@class evergarden.types.color { [1]: string, [2]: number }
 
----@alias evergarden.types.colors.enum 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'purple'|'pink'|'grey0'|'grey1'|'grey2'
+---@alias evergarden.types.colors.enum 'bg0_hard'|'bg0_soft'|'bg0'|'bg1'|'bg2'|'bg3'|'bg4'|'bg5'|'bg_visual'|'bg_red'|'bg_green'|'bg_blue'|'bg_yellow'|'fg'|'red'|'orange'|'yellow'|'green'|'aqua'|'blue'|'skye'|'purple'|'pink'|'grey0'|'grey1'|'grey2'
 ---@alias evergarden.types.colors { [evergarden.types.colors.enum]: evergarden.types.color }
 
 ---@type evergarden.types.colors
@@ -19,7 +19,8 @@ _G.evergarden_colors = {
   yellow      = { "#DBBC7F", 3 },
   green       = { "#B2C98F", 2 },
   aqua        = { "#93C9A1", 6 },
-  blue        = { "#8DC3BC", 4 },
+  skye        = { "#97C9C3", 4 },
+  blue        = { "#9BB5CF", 4 },
   purple      = { "#D6A0D1", 5 },
   pink        = { "#E3A8D1", 5 },
   grey0       = { "#7A8478", 8 },
