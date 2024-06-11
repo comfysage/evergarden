@@ -1,7 +1,7 @@
 local theme = require 'evergarden.colors'.setup {}
 
 local colors = {
-  normal = theme.shinme[1],
+  normal = theme.green[1],
   insert = theme.syntax.object[1],
   visual = theme.syntax.constant[1],
 

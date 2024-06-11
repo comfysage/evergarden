@@ -3,7 +3,7 @@
 ---@return evergarden.types.hlgroups
 return function(theme, config)
   return {
-    ['@property.css'] = { theme.sukai },
+    ['@property.css'] = { theme.blue },
     -- tag
     ['@tag.css'] = { theme.syntax.keyword },
     -- #id

@@ -85,38 +85,37 @@ function M.setup(colors, config)
   theme.bg_accent = theme.bg1
   theme.fg_accent = colors.bg4
 
-  theme.ike     = colors.aqua
-  theme.shinme  = colors.green
-  theme.sakura  = colors.red
-  theme.taiyo   = colors.orange
-  theme.sakaeru = colors.yellow
-  theme.sukai   = colors.blue
-  theme.sage    = colors.aqua
-  theme.seiun   = colors.purple
-  theme.roses   = colors.pink
+  theme.red    = colors.red
+  theme.orange = colors.orange
+  theme.yellow = colors.yellow
+  theme.green  = colors.green
+  theme.aqua   = colors.aqua
+  theme.blue   = colors.blue
+  theme.purple = colors.purple
+  theme.pink   = colors.pink
 
   theme.syntax  = {
-    keyword = theme.sakura,
+    keyword = theme.red,
     object = theme.fg1,
-    type = theme.sakaeru,
+    type = theme.yellow,
     context = theme.fg0,
-    constant = theme.roses,
-    call = theme.shinme,
-    string = theme.shinme,
-    macro = theme.taiyo,
-    annotation = theme.sakura,
+    constant = theme.pink,
+    call = theme.green,
+    string = theme.green,
+    macro = theme.orange,
+    annotation = theme.red,
   }
   theme.diagnostic = {
-    ok = theme.shinme,
-    error = theme.sakura,
-    warn = theme.sakaeru,
-    info = theme.sage,
-    hint = theme.sukai,
+    ok = theme.green,
+    error = theme.red,
+    warn = theme.yellow,
+    info = theme.aqua,
+    hint = theme.blue,
   }
   theme.diff = {
-    add = theme.shinme,
-    delete = theme.sakura,
-    change = theme.sage,
+    add = theme.green,
+    delete = theme.red,
+    change = theme.aqua,
   }
 
   theme.style = {

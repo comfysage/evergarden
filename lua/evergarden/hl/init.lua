@@ -10,7 +10,7 @@ function M.setup(theme, config)
   local hl_groups = {
     Normal = { theme.fg, theme.bg },
 
-    Cursor = { theme.sakaeru },
+    Cursor = { theme.yellow },
     CursorLine   = { theme.none, theme.bg1 },
     CursorColumn = { theme.none, theme.bg1 },
     QuickFixLine = { theme.none, theme.bg1 },
@@ -50,8 +50,8 @@ function M.setup(theme, config)
 
     Question = { theme.comment },
 
-    Search = { theme.taiyo, reverse = config.style.search.reverse },
-    CurSearch = { theme.taiyo, reverse = config.style.search.inc_reverse },
+    Search = { theme.orange, reverse = config.style.search.reverse },
+    CurSearch = { theme.orange, reverse = config.style.search.inc_reverse },
     IncSearch = { link = 'CurSearch' },
 
     Error      = { theme.diagnostic.error },
@@ -68,7 +68,7 @@ function M.setup(theme, config)
 
     -- Completion Menu
     Pmenu = { theme.fg1, theme.bg2 },
-    PmenuSel = { theme.bg2, theme.shinme, reverse = theme.style.search.reverse },
+    PmenuSel = { theme.bg2, theme.green, reverse = theme.style.search.reverse },
     PmenuSbar = { theme.none, theme.bg2 },
     PmenuThumb = { theme.none, theme.fg2 },
 
@@ -88,10 +88,10 @@ function M.setup(theme, config)
     Changed = { link = "@diff.change" },
 
     -- Spell
-    SpellCap   = { theme.shinme },
-    SpellBad   = { theme.sage },
-    SpellLocal = { theme.sage },
-    SpellRare  = { theme.seiun },
+    SpellCap   = { theme.green },
+    SpellBad   = { theme.aqua },
+    SpellLocal = { theme.aqua },
+    SpellRare  = { theme.purple },
   }
 
   -- merge syntax hl groups

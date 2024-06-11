@@ -3,7 +3,7 @@
 return function(theme, config)
   return {
     ['@annotation']            = { theme.syntax.annotation },
-    ['@attribute']             = { theme.seiun },
+    ['@attribute']             = { theme.purple },
     ['@boolean']               = { link = 'Boolean' },
     ['@character']             = { link = 'Character' },
     ['@comment']               = { theme.comment, italic = config.style.comment.italic },
@@ -11,7 +11,7 @@ return function(theme, config)
     ['@constant']              = { theme.syntax.constant },
     ['@constant.builtin']      = { link = '@constant' },
     ['@constant.macro']        = { link = '@constant' },
-    ['@constructor']           = { theme.shinme },
+    ['@constructor']           = { theme.green },
     ['@delimiter']             = { theme.syntax.context },
     ['@exception']             = { link = 'Exception' },
     ['@field']                 = { link = '@variable.member' },
@@ -23,7 +23,7 @@ return function(theme, config)
     ['@include']               = { link = 'Include' },
     ['@keyword']               = { theme.syntax.keyword, italic = config.style.keyword.italic },
     ['@keyword.function']      = { link = '@keyword' },
-    ['@keyword.operator']      = { theme.taiyo },
+    ['@keyword.operator']      = { theme.orange },
     ['@label']                 = { link = 'Label' },
     ['@method']                = { theme.syntax.context },
     ['@method.call']           = { link = '@function.call' },
@@ -41,15 +41,15 @@ return function(theme, config)
     ['@repeat']                = { link = 'Repeat' },
     ['@storageclass']          = { link = 'StorageClass' },
     ['@string']                = { theme.syntax.string },
-    ['@string.escape']         = { theme.sakaeru },
+    ['@string.escape']         = { theme.yellow },
     ['@string.regex']          = { link = '@string.escape' },
     ['@symbol']                = { theme.fg1 },
     ['@strike']                = { theme.fg2 },
-    ['@math']                  = { theme.sukai },
+    ['@math']                  = { theme.blue },
     ['@type']                  = { theme.syntax.type, italic = config.style.types.italic },
     ['@type.builtin']          = { link = '@type' },
     ['@type.qualifier']        = { link = '@keyword' },
-    ['@uri']                   = { theme.seiun },
+    ['@uri']                   = { theme.purple },
     ['@variable']              = { theme.syntax.object },
     ['@variable.builtin']      = { link = '@constant' },
     ['@variable.parameter']    = { link = '@variable' },
@@ -67,7 +67,7 @@ return function(theme, config)
     Comment                    = { link = '@comment' },
     Special                    = { link = '@punctuation.special' },
     Delimiter                  = { link = '@punctuation.delimiter' },
-    MatchParen                 = { theme.taiyo },
+    MatchParen                 = { theme.orange },
     Operator                   = { link = '@operator' },
 
     Todo                       = { link = '@comment.todo' },
@@ -83,17 +83,17 @@ return function(theme, config)
     ['@lsp.type.keyword']      = { link = '@keyword' },
 
     -- text
-    ['@comment.todo']          = { theme.ike },
-    ['@comment.note']          = { theme.sukai },
+    ['@comment.todo']          = { theme.aqua },
+    ['@comment.note']          = { theme.blue },
     ['@comment.fix']           = { theme.diagnostic.warn },
     ['@comment.warning']       = { theme.diagnostic.warn },
     ['@comment.error']         = { theme.diagnostic.error },
 
     ['@nontext']               = { link = 'NonText' },
     ['@text']                  = { theme.fg1 },
-    ['@text.emphasis']         = { theme.taiyo, italic = true },
-    ['@markup.strong']         = { theme.taiyo, bold = true, },
-    ['@markup.italic']         = { theme.taiyo, italic = true, },
+    ['@text.emphasis']         = { theme.orange, italic = true },
+    ['@markup.strong']         = { theme.orange, bold = true, },
+    ['@markup.italic']         = { theme.orange, italic = true, },
     ['@markup.heading']        = { link = '@text.title' },            -- headings, titles (including markers)
     ['@markup.quote']          = { link = '@comment' },               -- block quotes
     ['@markup.math']           = { link = '@markup.quote' },          -- math environments (e.g. `$ ... $` in LaTeX)
@@ -110,10 +110,10 @@ return function(theme, config)
     ['@tag.attribute']         = { link = '@attribute' },             -- XML-style tag attributes
     ['@tag.delimiter']         = { link = '@punctuation.delimiter' }, -- XML-style tag delimiters
 
-    ['@text.title']            = { theme.seiun },
-    ['@text.title.1']          = { theme.seiun },
-    ['@text.title.2']          = { theme.taiyo },
-    ['@text.title.3']          = { theme.shinme },
+    ['@text.title']            = { theme.purple },
+    ['@text.title.1']          = { theme.purple },
+    ['@text.title.2']          = { theme.orange },
+    ['@text.title.3']          = { theme.green },
     ['@text.title.4']          = { link = '@text.title.1' },
     ['@text.title.5']          = { link = '@text.title.2' },
     ['@text.title.6']          = { link = 'NonText' },

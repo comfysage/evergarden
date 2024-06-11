@@ -6,6 +6,6 @@ return function(theme, config)
     ['@tag.html'] = { theme.syntax.keyword },
     ['@tag.delimiter.html'] = { theme.syntax.context },
     ['@tag.attribute.html'] = { theme.fg0 },
-    ['@string.html'] = { theme.sukai },
+    ['@string.html'] = { theme.blue },
   }
 end
