@@ -73,10 +73,10 @@ function M.setup(theme, config)
     PmenuThumb = { theme.none, theme.fg2 },
 
     -- Diffs
-    DiffAdd    = { theme.diff.add,    theme.bg },
-    DiffDelete = { theme.diff.delete, theme.bg },
-    DiffChange = { theme.diff.change, theme.bg },
-    DiffText   = { theme.fg0, theme.bg },
+    DiffAdd    = { theme.diff.add,    theme.none },
+    DiffDelete = { theme.diff.delete, theme.none },
+    DiffChange = { theme.diff.change, theme.none },
+    DiffText   = { theme.fg0, theme.none },
     diffAdded   = { link = "@diff.add"    },
     diffRemoved = { link = "@diff.delete" },
     diffChanged = { link = "@diff.change" },
