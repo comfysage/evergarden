@@ -1,11 +1,9 @@
 {
   description = "evergarden theme";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-  };
+  inputs = { };
 
-  outputs = {self, nixpkgs}: let
+  outputs = {self}: let
     palette = {
       red      = "E67E80";
       orange   = "E69875";
