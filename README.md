@@ -91,6 +91,8 @@ require 'evergarden'.setup {
 
 - [kitty theme](./extras/kitty)
 - [base16-scheme](./extras/base16)
+- [scss](./extras/scss/evergarden.scss)
+- [discord theme](./extras/discord/evergarden.theme.css)
 
 ## License
 
