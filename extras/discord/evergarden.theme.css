@@ -2334,15 +2334,15 @@ foreignObject[mask="url(#svg-mask-status-offline)"] > div,
 foreignObject[mask="url(#svg-mask-status-offline)"] > rect,
 div[class^=dotOffline],
 i[class^=statusOffline] {
-  fill: #AEC2BE !important;
-  background-color: #AEC2BE !important;
+  fill: #46545B !important;
+  background-color: #46545B !important;
 }
 
 svg[fill="#82858f"],
 svg[fill="#80848e"],
 rect[fill="rgba(130, 133, 143, 1)"],
 rect[fill="rgba(128, 132, 142, 1)"] {
-  fill: #AEC2BE !important;
+  fill: #46545B !important;
 }
 
 svg[fill="#593695"],
