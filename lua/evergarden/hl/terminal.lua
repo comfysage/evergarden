@@ -16,5 +16,5 @@ return function(theme, colors)
   vim.g.terminal_color_6 = colors.aqua[1]
   vim.g.terminal_color_14  = colors.aqua[1]
   vim.g.terminal_color_7 = colors.fg[1]
-  vim.g.terminal_color_15  = colors.grey1[1]
+  vim.g.terminal_color_15  = theme.fg2[1]
 end

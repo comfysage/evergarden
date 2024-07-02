@@ -77,7 +77,7 @@ function M.setup(colors, config)
 
   theme.fg0     = colors.grey0
   theme.fg1     = colors.fg
-  theme.fg2     = colors.grey1
+  theme.fg2     = colors.grey2
 
   local sign_colors = { soft = theme.bg3 }
   theme.sign      = sign_colors[config.contrast_dark] or theme.none

@@ -62,7 +62,7 @@ function M.setup(theme, config)
 
     ColorColumn = { theme.none, theme.bg1 },
 
-    Directory = { theme.colors.grey1 },
+    Directory = { theme.fg2 },
 
     Underlined = { theme.none, theme.none },
 
