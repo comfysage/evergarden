@@ -14,17 +14,17 @@
       blue     = "9BB5CF";
       purple   = "D6A0D1";
       pink     = "E3A8D1";
-      text     = "D9E4DC";
-      subtext1 = "C9D6D0";
-      subtext0 = "AEC2BE";
-      overlay2 = "99ADAD";
+      text     = "D5D6C8";
+      subtext1 = "CCD4C1";
+      subtext0 = "BBCEC0";
+      overlay2 = "94AAA0";
       overlay1 = "6E8585";
       overlay0 = "5E6C70";
-      surface2 = "46545B";
-      surface1 = "3D494F";
-      surface0 = "343E44";
-      base     = "252B2E";
-      mantle   = "1C2225";
+      surface2 = "46565B";
+      surface1 = "3F4D52";
+      surface0 = "313C40";
+      base     = "232A2E";
+      mantle   = "1A2024";
       crust    = "171C1F";
     };
   in {
