@@ -93,6 +93,7 @@ require 'evergarden'.setup {
 - [base16-scheme](./extras/base16)
 - [scss](./extras/scss/evergarden.scss)
 - [discord theme](https://github.com/comfysage/evg-discord)
+- [userstyles](https://github.com/comfysage/userstyles)
 
 ## License
 
