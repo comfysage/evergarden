@@ -18,14 +18,15 @@
 ---@field fg0 evergarden.types.color
 ---@field fg1 evergarden.types.color
 ---@field fg2 evergarden.types.color
----@field sakura  evergarden.types.color
----@field sage    evergarden.types.color
----@field sukai   evergarden.types.color
----@field shinme  evergarden.types.color
----@field sakaeru evergarden.types.color
----@field taiyo evergarden.types.color
----@field seiun   evergarden.types.color
----@field ike     evergarden.types.color
+---@field red evergarden.types.color
+---@field orange evergarden.types.color
+---@field yellow evergarden.types.color
+---@field green evergarden.types.color
+---@field aqua evergarden.types.color
+---@field skye evergarden.types.color
+---@field blue evergarden.types.color
+---@field purple evergarden.types.color
+---@field pink evergarden.types.color
 ---@field syntax EvergardenSyntax
 ---@field diagnostic { ['ok'|'error'|'warn'|'info'|'hint']: evergarden.types.color }
 ---@field diff { ['add'|'delete'|'change']: evergarden.types.color }
