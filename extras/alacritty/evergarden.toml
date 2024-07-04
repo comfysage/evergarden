@@ -1,0 +1,72 @@
+## name: evergarden
+## author: comfysage
+## license: MIT
+## blurb: a comfy colorscheme for cozy morning coding
+
+[colors.primary]
+background = "#242B2E"
+foreground = "#D3C6AA"
+dim_foreground = "#7A8478"
+bright_foreground = "#D3C6AA"
+
+[colors.cursor]
+text = "#242B2E"
+cursor = "#D3C6AA"
+
+[colors.vi_mode_cursor]
+text = "#242B2E"
+cursor = "#B2C98F"
+
+[colors.search.matches]
+foreground = "#242B2E"
+background = "#BBCEC0"
+
+[colors.search.focused_match]
+foreground = "#242B2E"
+background = "#a6e3a1"
+
+[colors.footer_bar]
+foreground = "#242B2E"
+background = "#BBCEC0"
+
+[colors.hints.start]
+foreground = "#242B2E"
+background = "#DBBC7F"
+
+[colors.hints.end]
+foreground = "#242B2E"
+background = "#BBCEC0"
+
+[colors.selection]
+text = "#242B2E"
+background = "#D3C6AA"
+
+[colors.normal]
+black = "#343E44"
+red = "#E67E80"
+green = "#B2C98F"
+yellow = "#DBBC7F"
+blue = "#A2C8C3"
+magenta = "#D699B6"
+cyan = "#88C096"
+white = "#7A8478"
+
+[colors.bright]
+black = "#343E44"
+red = "#E67E80"
+green = "#B2C98F"
+yellow = "#DBBC7F"
+blue = "#A2C8C3"
+magenta = "#D699B6"
+cyan = "#88C096"
+white = "#7A8478"
+
+[colors.dim]
+black = "#343E44"
+red = "#E67E80"
+green = "#B2C98F"
+yellow = "#DBBC7F"
+blue = "#A2C8C3"
+magenta = "#D699B6"
+cyan = "#88C096"
+white = "#7A8478"
