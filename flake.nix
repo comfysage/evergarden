@@ -24,7 +24,7 @@
       surface1 = "3F4D52";
       surface0 = "313C40";
       base     = "232A2E";
-      mantle   = "1A2024";
+      mantle   = "1C2225";
       crust    = "171C1F";
     };
   in {

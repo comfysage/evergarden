@@ -5,7 +5,7 @@
 
 ---@type evergarden.types.colors
 _G.evergarden_colors = {
-  bg0_hard    = { "#1A2024", 0 },
+  bg0_hard    = { "#1C2225", 0 },
   bg0         = { "#232B2E", 0 },
   bg0_soft    = { "#2B3538", 0 },
   bg1         = { "#313C40", 8 },
