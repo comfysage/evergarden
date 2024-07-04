@@ -4,69 +4,69 @@
 ## blurb: a comfy colorscheme for cozy morning coding
 
 [colors.primary]
-background = "#242B2E"
-foreground = "#D3C6AA"
-dim_foreground = "#7A8478"
-bright_foreground = "#D3C6AA"
+background = "#232A2E"
+foreground = "#D5D6C8"
+dim_foreground = "#94AAA0"
+bright_foreground = "#D5D6C8"
 
 [colors.cursor]
-text = "#242B2E"
-cursor = "#D3C6AA"
+text = "#232A2E"
+cursor = "#D5D6C8"
 
 [colors.vi_mode_cursor]
-text = "#242B2E"
+text = "#232A2E"
 cursor = "#B2C98F"
 
 [colors.search.matches]
-foreground = "#242B2E"
+foreground = "#232A2E"
 background = "#BBCEC0"
 
 [colors.search.focused_match]
-foreground = "#242B2E"
+foreground = "#232A2E"
 background = "#a6e3a1"
 
 [colors.footer_bar]
-foreground = "#242B2E"
+foreground = "#232A2E"
 background = "#BBCEC0"
 
 [colors.hints.start]
-foreground = "#242B2E"
+foreground = "#232A2E"
 background = "#DBBC7F"
 
 [colors.hints.end]
-foreground = "#242B2E"
+foreground = "#232A2E"
 background = "#BBCEC0"
 
 [colors.selection]
-text = "#242B2E"
-background = "#D3C6AA"
+text = "#232A2E"
+background = "#D5D6C8"
 
 [colors.normal]
-black = "#343E44"
+black = "#232A2E"
 red = "#E67E80"
 green = "#B2C98F"
 yellow = "#DBBC7F"
-blue = "#A2C8C3"
-magenta = "#D699B6"
-cyan = "#88C096"
-white = "#7A8478"
+blue = "#9BB5CF"
+magenta = "#E3A8D1"
+cyan = "#93C9A1"
+white = "#D5D6C8"
 
 [colors.bright]
-black = "#343E44"
-red = "#E67E80"
-green = "#B2C98F"
-yellow = "#DBBC7F"
-blue = "#A2C8C3"
-magenta = "#D699B6"
-cyan = "#88C096"
-white = "#7A8478"
+black = "#313C40"
+red = "#E69875"
+green = "#3F4D52"
+yellow = "#46565B"
+blue = "#6E8585"
+magenta = "#CCD4C1"
+cyan = "#5E6C70"
+white = "#94AAA0"
 
 [colors.dim]
-black = "#343E44"
+black = "#232A2E"
 red = "#E67E80"
 green = "#B2C98F"
 yellow = "#DBBC7F"
-blue = "#A2C8C3"
-magenta = "#D699B6"
-cyan = "#88C096"
-white = "#7A8478"
+blue = "#9BB5CF"
+magenta = "#E3A8D1"
+cyan = "#93C9A1"
+white = "#D5D6C8"
