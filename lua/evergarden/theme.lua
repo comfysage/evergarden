@@ -53,12 +53,12 @@ local M = {}
 ---@param config evergarden.types.config
 ---@return evergarden.types.theme
 function M.setup(colors, config)
-  local theme   = {}
+  local theme = {}
 
-  theme.none    = { 'NONE', 0 }
-  theme.colors  = colors
+  theme.none = { 'NONE', 0 }
+  theme.colors = colors
 
-  theme.bg      = theme.none
+  theme.bg = theme.none
   if not config.transparent_background then
     theme.bg = colors.bg0
     if config.contrast_dark == 'hard' then
@@ -68,35 +68,35 @@ function M.setup(colors, config)
       theme.bg = colors.bg0_soft
     end
   end
-  theme.base    = { fg = colors.bg0, bg = theme.bg }
-  theme.fg      = colors.fg
+  theme.base = { fg = colors.bg0, bg = theme.bg }
+  theme.fg = colors.fg
 
-  theme.bg0     = colors.bg0
-  theme.bg1     = colors.bg1
-  theme.bg2     = colors.bg2
-  theme.bg3     = colors.bg3
+  theme.bg0 = colors.bg0
+  theme.bg1 = colors.bg1
+  theme.bg2 = colors.bg2
+  theme.bg3 = colors.bg3
 
-  theme.fg0     = colors.grey0
-  theme.fg1     = colors.fg
-  theme.fg2     = colors.grey2
+  theme.fg0 = colors.grey0
+  theme.fg1 = colors.fg
+  theme.fg2 = colors.grey2
 
-  local sign_colors = { soft = theme.bg3 }
-  theme.sign      = sign_colors[config.contrast_dark] or theme.none
-  theme.comment   = theme.fg2
+  local sign_colors = config.style.sign.highlight and { soft = theme.bg3 } or {}
+  theme.sign = sign_colors[config.contrast_dark] or theme.none
+  theme.comment = theme.fg2
   theme.bg_accent = theme.bg1
   theme.fg_accent = colors.bg4
 
-  theme.red    = colors.red
+  theme.red = colors.red
   theme.orange = colors.orange
   theme.yellow = colors.yellow
-  theme.green  = colors.green
-  theme.aqua   = colors.aqua
-  theme.skye   = colors.skye
-  theme.blue   = colors.blue
+  theme.green = colors.green
+  theme.aqua = colors.aqua
+  theme.skye = colors.skye
+  theme.blue = colors.blue
   theme.purple = colors.purple
-  theme.pink   = colors.pink
+  theme.pink = colors.pink
 
-  theme.syntax  = {
+  theme.syntax = {
     keyword = theme.red,
     object = theme.fg1,
     type = theme.yellow,
@@ -121,7 +121,7 @@ function M.setup(colors, config)
   }
 
   theme.style = {
-    search = { reverse = true }
+    search = { reverse = true },
   }
   theme.style = vim.tbl_deep_extend('force', theme.style, config.style)
 

@@ -38,8 +38,8 @@ end
 ---@return evergarden.types.theme
 function M.setup(config)
   ---@type evergarden.types.config
-  config = vim.tbl_extend("force", _G.evergarden_config, config or {})
-  return require 'evergarden.theme'.setup(M.colors(), config)
+  config = vim.tbl_extend('force', _G.evergarden_config, config or {})
+  return require('evergarden.theme').setup(M.colors(), config)
 end
 
 return M

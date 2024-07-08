@@ -21,7 +21,7 @@ function M.setup(theme, config)
     Normal = { theme.fg, theme.bg },
 
     Cursor = { theme.yellow },
-    CursorLine   = { theme.none, theme.bg1 },
+    CursorLine = { theme.none, theme.bg1 },
     CursorColumn = { theme.none, theme.bg1 },
     QuickFixLine = { theme.none, theme.bg1 },
 
@@ -31,8 +31,10 @@ function M.setup(theme, config)
     CursorLineNr = { theme.comment },
     SignColumn = { theme.none, theme.sign },
     WinSeparator = { theme.bg2 },
-    VertSplit    = { link = "WinSeparator" },
-    TabLineSel = config.style.tabline.reverse and { theme.base.fg, theme.colors[config.style.tabline.color] } or { theme.colors[config.style.tabline.color] },
+    VertSplit = { link = 'WinSeparator' },
+    TabLineSel = config.style.tabline.reverse
+        and { theme.base.fg, theme.colors[config.style.tabline.color] }
+      or { theme.colors[config.style.tabline.color] },
     TabLine = { theme.comment },
     TabLineFill = { link = 'TabLine' },
     Title = { theme.comment },
@@ -40,23 +42,23 @@ function M.setup(theme, config)
     Folded = { theme.comment },
     FoldColumn = { theme.bg1 },
 
-    NormalFloat        = { theme.fg, theme.bg_accent },
-    FloatBorder        = { theme.bg2 },
-    StatusLine         = { theme.fg2, theme.none },
-    StatusLineNC       = { theme.fg2, theme.bg1 },
-    FloatShadow        = { theme.none, theme.none },
+    NormalFloat = { theme.fg, theme.bg_accent },
+    FloatBorder = { theme.bg2 },
+    StatusLine = { theme.fg2, theme.none },
+    StatusLineNC = { theme.fg2, theme.bg1 },
+    FloatShadow = { theme.none, theme.none },
     FloatShadowThrough = { theme.none, theme.none },
 
-    OkText       = { theme.diagnostic.ok,    theme.none      },
-    ErrorText    = { theme.diagnostic.error, theme.none      },
-    WarningText  = { theme.diagnostic.warn,  theme.none      },
-    InfoText     = { theme.diagnostic.info,  theme.none      },
-    HintText     = { theme.diagnostic.hint,  theme.none      },
-    OkFloat      = { theme.diagnostic.ok,    theme.bg_accent },
-    ErrorFloat   = { theme.diagnostic.error, theme.bg_accent },
-    WarningFloat = { theme.diagnostic.warn,  theme.bg_accent },
-    InfoFloat    = { theme.diagnostic.info,  theme.bg_accent },
-    HintFloat    = { theme.diagnostic.hint,  theme.bg_accent },
+    OkText = { theme.diagnostic.ok, theme.none },
+    ErrorText = { theme.diagnostic.error, theme.none },
+    WarningText = { theme.diagnostic.warn, theme.none },
+    InfoText = { theme.diagnostic.info, theme.none },
+    HintText = { theme.diagnostic.hint, theme.none },
+    OkFloat = { theme.diagnostic.ok, theme.bg_accent },
+    ErrorFloat = { theme.diagnostic.error, theme.bg_accent },
+    WarningFloat = { theme.diagnostic.warn, theme.bg_accent },
+    InfoFloat = { theme.diagnostic.info, theme.bg_accent },
+    HintFloat = { theme.diagnostic.hint, theme.bg_accent },
 
     Question = { theme.comment },
 
@@ -64,8 +66,8 @@ function M.setup(theme, config)
     CurSearch = { theme.orange, reverse = config.style.search.inc_reverse },
     IncSearch = { link = 'CurSearch' },
 
-    Error      = { theme.diagnostic.error },
-    ErrorMsg   = { link = "Error" },
+    Error = { theme.diagnostic.error },
+    ErrorMsg = { link = 'Error' },
     WarningMsg = { theme.diagnostic.warn },
     MoreMsg = { theme.comment },
     ModeMsg = { theme.bg2, theme.none },
@@ -83,44 +85,46 @@ function M.setup(theme, config)
     PmenuThumb = { theme.none, theme.fg2 },
 
     -- Diffs
-    DiffAdd    = { theme.diff.add,    theme.none },
+    DiffAdd = { theme.diff.add, theme.none },
     DiffDelete = { theme.diff.delete, theme.none },
     DiffChange = { theme.diff.change, theme.none },
-    DiffText   = { theme.fg0, theme.none },
-    diffAdded   = { link = "@diff.add"    },
-    diffRemoved = { link = "@diff.delete" },
-    diffChanged = { link = "@diff.change" },
-    diffFile    = { theme.syntax.object },
+    DiffText = { theme.fg0, theme.none },
+    diffAdded = { link = '@diff.add' },
+    diffRemoved = { link = '@diff.delete' },
+    diffChanged = { link = '@diff.change' },
+    diffFile = { theme.syntax.object },
     diffNewFile = { theme.syntax.object },
-    diffLine    = { theme.syntax.context },
-    Added   = { link = "@diff.add"    },
-    Removed = { link = "@diff.delete" },
-    Changed = { link = "@diff.change" },
+    diffLine = { theme.syntax.context },
+    Added = { link = '@diff.add' },
+    Removed = { link = '@diff.delete' },
+    Changed = { link = '@diff.change' },
 
     -- Spell
-    SpellCap   = { theme.green },
-    SpellBad   = { theme.aqua },
+    SpellCap = { theme.green },
+    SpellBad = { theme.aqua },
     SpellLocal = { theme.aqua },
-    SpellRare  = { theme.purple },
+    SpellRare = { theme.purple },
   }
 
-  vim.iter(ipairs { 'syntax', 'treesitter', 'diagnostics' }):each(function(_, mod)
-    local ok, hl_fn = pcall(require, ('evergarden.hl.%s'):format(mod))
-    if not ok then
-      return
-    end
-    ---@diagnostic disable-next-line: redefined-local
-    local ok, hl_imports = pcall(hl_fn, theme, config)
-    if not ok then
-      return
-    end
-    hl_groups = vim.tbl_extend('force', hl_groups, hl_imports)
-  end)
+  vim
+    .iter(ipairs { 'syntax', 'treesitter', 'diagnostics' })
+    :each(function(_, mod)
+      local ok, hl_fn = pcall(require, ('evergarden.hl.%s'):format(mod))
+      if not ok then
+        return
+      end
+      ---@diagnostic disable-next-line: redefined-local
+      local ok, hl_imports = pcall(hl_fn, theme, config)
+      if not ok then
+        return
+      end
+      hl_groups = vim.tbl_extend('force', hl_groups, hl_imports)
+    end)
 
   -- lsp
   hl_groups['@constructor.lua'] = { theme.syntax.context }
 
-  vim.iter(ipairs({ 'html', 'scss' })):each(function(_, ft)
+  vim.iter(ipairs { 'html', 'scss' }):each(function(_, ft)
     local ok, hl_ft_fn = pcall(require, ('evergarden.hl.ft.%s'):format(ft))
     if not ok then
       return
@@ -153,25 +157,25 @@ function M.setup(theme, config)
   hl_groups['markdownUrl'] = { link = '@markup.link.url' }
 
   -- Telescope
-  hl_groups['TelescopeNormal']         = { theme.syntax.context }
+  hl_groups['TelescopeNormal'] = { theme.syntax.context }
   -- hl_groups['TelescopeNormal'] = { link = 'Normal' }
-  hl_groups['TelescopePromptPrefix']   = { link = "Constant" }
+  hl_groups['TelescopePromptPrefix'] = { link = 'Constant' }
   hl_groups['TelescopePromptNormal'] = { 'none', 'none' }
-  hl_groups['TelescopeSelection']      = { link = "Identifier" }
+  hl_groups['TelescopeSelection'] = { link = 'Identifier' }
   hl_groups['TelescopeSelection'] = { 'none', theme.bg_accent }
-  hl_groups['TelescopeSelectionCaret'] = { link = "TelescopeNormal" }
-  hl_groups['TelescopeMatching']       = { link = "Search" }
+  hl_groups['TelescopeSelectionCaret'] = { link = 'TelescopeNormal' }
+  hl_groups['TelescopeMatching'] = { link = 'Search' }
   hl_groups['TelescopeMatching'] = { link = 'Search' }
   hl_groups['TelescopeTitle'] = { link = 'FloatTitle' }
   hl_groups['TelescopeBorder'] = { link = 'FloatBorder' }
 
-  hl_groups['TelescopeBorder']        = { theme.bg2 }
-  hl_groups['TelescopePromptBorder']  = { link = "TelescopeBorder" }
-  hl_groups['TelescopeResultsBorder'] = { link = "TelescopeBorder" }
-  hl_groups['TelescopePreviewBorder'] = { link = "TelescopeBorder" }
+  hl_groups['TelescopeBorder'] = { theme.bg2 }
+  hl_groups['TelescopePromptBorder'] = { link = 'TelescopeBorder' }
+  hl_groups['TelescopeResultsBorder'] = { link = 'TelescopeBorder' }
+  hl_groups['TelescopePreviewBorder'] = { link = 'TelescopeBorder' }
 
   -- GitSigns
-  hl_groups['GitGutterAdd']    = { theme.diff.add,    theme.sign }
+  hl_groups['GitGutterAdd'] = { theme.diff.add, theme.sign }
   hl_groups['GitGutterChange'] = { theme.diff.change, theme.sign }
   hl_groups['GitGutterDelete'] = { theme.diff.delete, theme.sign }
   hl_groups['GitGutterChangeDelete'] = { link = 'GitGutterChange' }
@@ -179,36 +183,36 @@ function M.setup(theme, config)
   -- Cmp
   hl_groups['CmpItemMenu'] = { theme.syntax.constant, italic = true }
 
-  hl_groups['CmpItemKindText']  = { theme.fg1 }
-  hl_groups['CmpItemKindMethod']  = { theme.syntax.constant }
-  hl_groups['CmpItemKindFunction']  = { theme.syntax.call }
-  hl_groups['CmpItemKindConstructor']  = { theme.syntax.type }
-  hl_groups['CmpItemKindField']  = { theme.syntax.object }
-  hl_groups['CmpItemKindVariable']  = { theme.syntax.object }
-  hl_groups['CmpItemKindClass']  = { theme.syntax.type }
-  hl_groups['CmpItemKindInterface']  = { theme.syntax.type }
-  hl_groups['CmpItemKindModule']  = { theme.syntax.keyword }
-  hl_groups['CmpItemKindProperty']  = { theme.syntax.keyword }
-  hl_groups['CmpItemKindUnit']  = { theme.syntax.constant }
-  hl_groups['CmpItemKindValue']  = { theme.syntax.constant }
-  hl_groups['CmpItemKindEnum']  = { theme.syntax.constant }
-  hl_groups['CmpItemKindKeyword']  = { theme.syntax.keyword }
-  hl_groups['CmpItemKindSnippet']  = { theme.syntax.macro }
-  hl_groups['CmpItemKindColor']  = { theme.syntax.constant }
-  hl_groups['CmpItemKindFile']  = { theme.syntax.type }
-  hl_groups['CmpItemKindReference']  = { theme.fg0 }
-  hl_groups['CmpItemKindFolder']  = { theme.syntax.type }
-  hl_groups['CmpItemKindEnumMember']  = { theme.syntax.constant }
-  hl_groups['CmpItemKindConstant']  = { theme.syntax.constant }
-  hl_groups['CmpItemKindStruct']  = { theme.syntax.type }
-  hl_groups['CmpItemKindEvent']  = { theme.syntax.keyword }
-  hl_groups['CmpItemKindOperator']  = { link = "Operator" }
-  hl_groups['CmpItemKindTypeParameter']  = { theme.syntax.type }
+  hl_groups['CmpItemKindText'] = { theme.fg1 }
+  hl_groups['CmpItemKindMethod'] = { theme.syntax.constant }
+  hl_groups['CmpItemKindFunction'] = { theme.syntax.call }
+  hl_groups['CmpItemKindConstructor'] = { theme.syntax.type }
+  hl_groups['CmpItemKindField'] = { theme.syntax.object }
+  hl_groups['CmpItemKindVariable'] = { theme.syntax.object }
+  hl_groups['CmpItemKindClass'] = { theme.syntax.type }
+  hl_groups['CmpItemKindInterface'] = { theme.syntax.type }
+  hl_groups['CmpItemKindModule'] = { theme.syntax.keyword }
+  hl_groups['CmpItemKindProperty'] = { theme.syntax.keyword }
+  hl_groups['CmpItemKindUnit'] = { theme.syntax.constant }
+  hl_groups['CmpItemKindValue'] = { theme.syntax.constant }
+  hl_groups['CmpItemKindEnum'] = { theme.syntax.constant }
+  hl_groups['CmpItemKindKeyword'] = { theme.syntax.keyword }
+  hl_groups['CmpItemKindSnippet'] = { theme.syntax.macro }
+  hl_groups['CmpItemKindColor'] = { theme.syntax.constant }
+  hl_groups['CmpItemKindFile'] = { theme.syntax.type }
+  hl_groups['CmpItemKindReference'] = { theme.fg0 }
+  hl_groups['CmpItemKindFolder'] = { theme.syntax.type }
+  hl_groups['CmpItemKindEnumMember'] = { theme.syntax.constant }
+  hl_groups['CmpItemKindConstant'] = { theme.syntax.constant }
+  hl_groups['CmpItemKindStruct'] = { theme.syntax.type }
+  hl_groups['CmpItemKindEvent'] = { theme.syntax.keyword }
+  hl_groups['CmpItemKindOperator'] = { link = 'Operator' }
+  hl_groups['CmpItemKindTypeParameter'] = { theme.syntax.type }
 
-  hl_groups['CmpItemAbbrDeprecated'] = { link = "Comment" }
+  hl_groups['CmpItemAbbrDeprecated'] = { link = 'Comment' }
 
-  hl_groups['CmpItemAbbrMatch']      = { link = "Search" }
-  hl_groups['CmpItemAbbrMatchFuzzy'] = { link = "CmpItemAbbrMatch" }
+  hl_groups['CmpItemAbbrMatch'] = { link = 'Search' }
+  hl_groups['CmpItemAbbrMatchFuzzy'] = { link = 'CmpItemAbbrMatch' }
 
   -- lukas-reineke/indent-blankline.nvim
   hl_groups['@ibl.indent.char.1'] = { theme.bg2, nocombine = true }
@@ -237,7 +241,7 @@ function M.setup(theme, config)
     if hl_groups[hl] and not vim.tbl_isempty(override) then
       hl_groups[hl].link = nil
     end
-    hl_groups[hl] = vim.tbl_deep_extend("force", hl_groups[hl] or {}, override)
+    hl_groups[hl] = vim.tbl_deep_extend('force', hl_groups[hl] or {}, override)
   end
 
   return hl_groups

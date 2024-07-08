@@ -9,8 +9,9 @@ function M.palettte()
     ---@type string
     local _color = v[1]
     local color = string.sub(_color, 2)
-    data.swatches[#data.swatches+1] = {
-      name = k, color = color,
+    data.swatches[#data.swatches + 1] = {
+      name = k,
+      color = color,
     }
   end
 
@@ -18,7 +19,7 @@ function M.palettte()
 end
 
 function M.xresources()
-local str = [[! Evergarden
+  local str = [[! Evergarden
 *.foreground: %s
 *.background: %s
 *.cursorColor: %s
@@ -40,15 +41,26 @@ local str = [[! Evergarden
 *.color7:  %s
 *.color15: %s]]
 
-  return str:format(colors.fg, colors.bg0, colors.orange,
-    colors.bg0, colors.bg1,
-    colors.red, colors.red,
-    colors.green, colors.green,
-    colors.yellow, colors.orange,
-    colors.blue, colors.blue,
-    colors.purple, colors.purple,
-    colors.aqua, colors.aqua,
-    colors.fg, colors.grey1
+  return str:format(
+    colors.fg,
+    colors.bg0,
+    colors.orange,
+    colors.bg0,
+    colors.bg1,
+    colors.red,
+    colors.red,
+    colors.green,
+    colors.green,
+    colors.yellow,
+    colors.orange,
+    colors.blue,
+    colors.blue,
+    colors.purple,
+    colors.purple,
+    colors.aqua,
+    colors.aqua,
+    colors.fg,
+    colors.grey1
   )
 end
 
