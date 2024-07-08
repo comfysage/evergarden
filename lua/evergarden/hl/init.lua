@@ -8,6 +8,16 @@ local M = {}
 function M.setup(theme, config)
   ---@type evergarden.types.hlgroups
   local hl_groups = {
+    RedAccent = { theme.red, { '#453539', 1 } },
+    OrangeAccent = { theme.orange, { '#4A453E', 11 } },
+    YellowAccent = { theme.yellow, { '#4A4941', 3 } },
+    GreenAccent = { theme.green, { '#384239', 2 } },
+    AquaAccent = { theme.aqua, { '#344240', 6 } },
+    SkyeAccent = { theme.skye, { '#313F42', 4 } },
+    BlueAccent = { theme.blue, { '#363A47', 4 } },
+    PurpleAccent = { theme.purple, { '#43374A', 5 } },
+    PinkAccent = { theme.pink, { '#453547', 5 } },
+
     Normal = { theme.fg, theme.bg },
 
     Cursor = { theme.yellow },
