@@ -104,28 +104,34 @@ function M.setup(theme, config)
     SpellRare  = { theme.purple },
   }
 
-  -- merge syntax hl groups
-  hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.syntax'(theme, config))
-
-  -- merge treesitter hl groups
-  hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.treesitter'(theme, config))
-
-  -- merge diagnostic hl groups
-  hl_groups = vim.tbl_extend('force', hl_groups, require 'evergarden.hl.diagnostics'(theme, config))
+  vim.iter(ipairs { 'syntax', 'treesitter', 'diagnostics' }):each(function(_, mod)
+    local ok, hl_fn = pcall(require, ('evergarden.hl.%s'):format(mod))
+    if not ok then
+      return
+    end
+    ---@diagnostic disable-next-line: redefined-local
+    local ok, hl_imports = pcall(hl_fn, theme, config)
+    if not ok then
+      return
+    end
+    hl_groups = vim.tbl_extend('force', hl_groups, hl_imports)
+  end)
 
   -- lsp
   hl_groups['@constructor.lua'] = { theme.syntax.context }
 
-  for _, ft in ipairs { 'html', 'css' } do
+  vim.iter(ipairs({ 'html', 'scss' })):each(function(_, ft)
     local ok, hl_ft_fn = pcall(require, ('evergarden.hl.ft.%s'):format(ft))
-    if ok then
-      ---@diagnostic disable-next-line: redefined-local
-      local ok, hl_imports = pcall(hl_ft_fn, theme, config)
-      if ok then
-        hl_groups = vim.tbl_deep_extend('force', hl_groups, hl_imports)
-      end
+    if not ok then
+      return
     end
-  end
+    ---@diagnostic disable-next-line: redefined-local
+    local ok, hl_imports = pcall(hl_ft_fn, theme, config)
+    if not ok then
+      return
+    end
+    hl_groups = vim.tbl_deep_extend('force', hl_groups, hl_imports)
+  end)
 
   hl_groups['@lsp.type.macro.rust'] = { theme.syntax.macro }
 
