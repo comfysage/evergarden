@@ -1,10 +1,20 @@
-![preview](./images/asset.rust.png)
+![preview__lua](./images/asset.lua.png)
+
+<h1 align="center">
+    evergarden
+</h1>
 
 evergarden is a comfy neovim colorscheme for cozy morning coding.
 
 evergarden is inspired by the [everforest colorscheme](https://github.com/sainnhe/everforest) and [nord colorscheme](https://github.com/nordtheme/nord).
 
 evergarden was designed as a cozy theme with a focus on readability and visual comfort.
+
+|        |                                                     |
+| :----: | :-------------------------------------------------: |
+|  hard  | ![preview-hard__rust](./images/asset.hard.rust.png) |
+| medium |      ![preview-rust](./images/asset.rust.png)       |
+|  soft  | ![preview-soft__rust](./images/asset.soft.rust.png) |
 
 ## Installation
 
