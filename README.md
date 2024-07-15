@@ -51,6 +51,7 @@ require 'evergarden'.setup {
     types = { italic = true },
     keyword = { italic = true },
     comment = { italic = false },
+    sign = { highlight = false },
   },
   overrides = { }, -- add custom overrides
 }

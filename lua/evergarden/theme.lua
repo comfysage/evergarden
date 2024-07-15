@@ -4,6 +4,7 @@
 ---@field types { italic: boolean }
 ---@field keyword { italic: boolean }
 ---@field comment { italic: boolean }
+---@field sign { highlight: boolean }
 
 ---@class evergarden.types.theme
 ---@field none evergarden.types.color
@@ -80,7 +81,7 @@ function M.setup(colors, config)
   theme.fg1 = colors.fg
   theme.fg2 = colors.grey2
 
-  local sign_colors = config.style.sign.highlight and { soft = theme.bg3 } or {}
+  local sign_colors = config.style.sign.highlight and { hard = theme.bg1, medium = theme.bg2,  soft = theme.bg3 } or {}
   theme.sign = sign_colors[config.contrast_dark] or theme.none
   theme.comment = theme.fg2
   theme.bg_accent = theme.bg1

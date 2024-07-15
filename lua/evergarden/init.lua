@@ -18,6 +18,7 @@ evergarden.default_config = {
     types = { italic = true },
     keyword = { italic = true },
     comment = { italic = false },
+    sign = { highlight = false },
   },
   overrides = {},
 }
