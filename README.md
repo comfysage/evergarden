@@ -247,7 +247,7 @@ require 'evergarden'.setup {
 ## :sparkles: Extras
 
 evergarden has been brought to many tools and editors by kind contributors you
-can explore them on the [ports page of the official site](https://everviolet.xyz/ports).
+can explore them on the [official site](https://evergarden.moe).
 
 new ports are always welcome - if you’ve made one, feel free to reach out!
 
