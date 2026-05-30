@@ -1,0 +1,21 @@
+name: "vim"
+base: "lua51"
+
+globals:
+  vim:
+    any: true
+
+  jit:
+    any: true
+
+  assert:
+    any: true
+
+  describe:
+    any: true
+
+  it:
+    any: true
+
+  before_each.args:
+    any: true
