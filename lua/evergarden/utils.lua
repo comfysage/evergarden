@@ -11,6 +11,8 @@ local function clamp(min, max, v)
   return math.max(min, math.min(max, v))
 end
 
+local nonnil = vim.nonnil or vim.F.if_nil
+
 ---@param group string
 ---@param colors evergarden.types.colorspec
 ---@param config? evergarden.types.config
@@ -93,7 +95,7 @@ end
 ---@param default any
 ---@param ... string
 function M.vary(t, default, ...)
-  return vim.F.if_nil(vim.tbl_get(t, ...), default)
+  return nonnil(vim.tbl_get(t, ...), default)
 end
 
 ---@generic T
