@@ -3,6 +3,9 @@ local utils = require 'evergarden.utils'
 ---@param theme evergarden.types.theme
 ---@param config evergarden.types.config
 return function(theme, config)
+  local pmenu_sel_bg = theme.colors[config.editor.completion.selected.color]
+    or theme.surface1
+
   return {
     Normal = {
       theme.text,
@@ -134,10 +137,11 @@ return function(theme, config)
       style = config.editor.float.solid_border and { 'reverse' } or {},
     }, { fg = theme.editor.completion, bg = theme.editor.completion }),
     PmenuKind = { theme.subtext0 },
+    PmenuKindSel = { theme.subtext0, pmenu_sel_bg },
     PmenuExtra = { theme.syntax.annotation },
+    PmenuExtraSel = { theme.syntax.annotation, pmenu_sel_bg },
     PmenuSel = {
-      bg = theme.colors[config.editor.completion.selected.color]
-        or theme.surface1,
+      bg = pmenu_sel_bg,
       style = config.editor.completion.selected.style or { 'bold' },
     },
     PmenuMatch = { theme.editor.incsearch },
