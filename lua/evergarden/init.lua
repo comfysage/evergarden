@@ -38,7 +38,8 @@ function evergarden.load(cfg)
     vim.go.background = 'dark'
   end
 
-  cfg.theme.ansi = vim.F.if_nil(cfg.theme.ansi, not vim.o.termguicolors)
+  cfg.theme.ansi =
+    require('evergarden.utils').nonnil(cfg.theme.ansi, not vim.o.termguicolors)
 
   local cache = cfg.cache or false
   if cache then

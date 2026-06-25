@@ -11,7 +11,18 @@ local function clamp(min, max, v)
   return math.max(min, math.min(max, v))
 end
 
-local nonnil = vim.nonnil or vim.F.if_nil
+M.nonnil = vim.nonnil
+  or vim.F.if_nil
+  or function(...)
+    local nargs = select('#', ...)
+    for i = 1, nargs do
+      local v = select(i, ...)
+      if v ~= nil then
+        return v
+      end
+    end
+    return nil
+  end
 
 ---@param group string
 ---@param colors evergarden.types.colorspec
@@ -95,7 +106,7 @@ end
 ---@param default any
 ---@param ... string
 function M.vary(t, default, ...)
-  return nonnil(vim.tbl_get(t, ...), default)
+  return M.nonnil(vim.tbl_get(t, ...), default)
 end
 
 ---@generic T
