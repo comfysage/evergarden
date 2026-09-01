@@ -12,9 +12,14 @@ return function(theme, config)
       config.editor.transparent_background and theme.none or theme.base,
     },
 
-    Cursor = { bg = theme.cursor },
+    Cursor = { bg = theme.cursor, fg = theme.crust },
     lCursor = { link = 'Cursor' },
     CursorIM = { link = 'Cursor' },
+
+    MCursor = { bg = theme.subtext1, fg = theme.crust },
+    MCursorVisual = {
+      bg = utils.blend(theme.surface1, theme.base, 0.40),
+    },
     CursorLine = { theme.none, theme.surface0 },
 
     Visual = { theme.none, theme.surface1 },
